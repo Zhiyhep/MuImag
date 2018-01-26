@@ -2,9 +2,9 @@
 /gps/particle mu+
 /gps/pos/type Plane
 /gps/pos/shape Square
-/gps/pos/centre 0. 0. 550.1 mm
-/gps/pos/halfx 750 mm
-/gps/pos/halfy 750 mm
+/gps/pos/centre 0. 0. 330.1 mm
+/gps/pos/halfx 250 mm
+/gps/pos/halfy 250 mm
 /gps/energy 3 GeV
 /gps/ang/type user
 /gps/hist/type theta

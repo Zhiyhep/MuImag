@@ -2,7 +2,7 @@
 /gps/particle mu+
 /gps/pos/type Plane
 /gps/pos/shape Square
-/gps/pos/centre 0. 0. 550.1 mm
+/gps/pos/centre 0. 0. 330.1 mm
 /gps/pos/halfx 750 mm
 /gps/pos/halfy 750 mm
 /gps/energy 3 GeV

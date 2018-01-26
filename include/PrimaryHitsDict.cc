@@ -56,7 +56,7 @@ namespace ROOT {
       ::PrimaryHits *ptr = 0;
       static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::PrimaryHits));
       static ::ROOT::TGenericClassInfo 
-         instance("PrimaryHits", "PrimaryHits.hh", 7,
+         instance("PrimaryHits", "PrimaryHits.hh", 19,
                   typeid(::PrimaryHits), ::ROOT::Internal::DefineBehavior(ptr, ptr),
                   &PrimaryHits_Dictionary, isa_proxy, 4,
                   sizeof(::PrimaryHits) );
@@ -170,6 +170,69 @@ namespace ROOT {
    }
 } // end of namespace ROOT for class vector<double>
 
+namespace ROOT {
+   static TClass *vectorlETStringgR_Dictionary();
+   static void vectorlETStringgR_TClassManip(TClass*);
+   static void *new_vectorlETStringgR(void *p = 0);
+   static void *newArray_vectorlETStringgR(Long_t size, void *p);
+   static void delete_vectorlETStringgR(void *p);
+   static void deleteArray_vectorlETStringgR(void *p);
+   static void destruct_vectorlETStringgR(void *p);
+
+   // Function generating the singleton type initializer
+   static TGenericClassInfo *GenerateInitInstanceLocal(const vector<TString>*)
+   {
+      vector<TString> *ptr = 0;
+      static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(vector<TString>));
+      static ::ROOT::TGenericClassInfo 
+         instance("vector<TString>", -2, "vector", 210,
+                  typeid(vector<TString>), ::ROOT::Internal::DefineBehavior(ptr, ptr),
+                  &vectorlETStringgR_Dictionary, isa_proxy, 4,
+                  sizeof(vector<TString>) );
+      instance.SetNew(&new_vectorlETStringgR);
+      instance.SetNewArray(&newArray_vectorlETStringgR);
+      instance.SetDelete(&delete_vectorlETStringgR);
+      instance.SetDeleteArray(&deleteArray_vectorlETStringgR);
+      instance.SetDestructor(&destruct_vectorlETStringgR);
+      instance.AdoptCollectionProxyInfo(TCollectionProxyInfo::Generate(TCollectionProxyInfo::Pushback< vector<TString> >()));
+      return &instance;
+   }
+   // Static variable to force the class initialization
+   static ::ROOT::TGenericClassInfo *_R__UNIQUE_DICT_(Init) = GenerateInitInstanceLocal((const vector<TString>*)0x0); R__UseDummy(_R__UNIQUE_DICT_(Init));
+
+   // Dictionary for non-ClassDef classes
+   static TClass *vectorlETStringgR_Dictionary() {
+      TClass* theClass =::ROOT::GenerateInitInstanceLocal((const vector<TString>*)0x0)->GetClass();
+      vectorlETStringgR_TClassManip(theClass);
+   return theClass;
+   }
+
+   static void vectorlETStringgR_TClassManip(TClass* ){
+   }
+
+} // end of namespace ROOT
+
+namespace ROOT {
+   // Wrappers around operator new
+   static void *new_vectorlETStringgR(void *p) {
+      return  p ? ::new((::ROOT::Internal::TOperatorNewHelper*)p) vector<TString> : new vector<TString>;
+   }
+   static void *newArray_vectorlETStringgR(Long_t nElements, void *p) {
+      return p ? ::new((::ROOT::Internal::TOperatorNewHelper*)p) vector<TString>[nElements] : new vector<TString>[nElements];
+   }
+   // Wrapper around operator delete
+   static void delete_vectorlETStringgR(void *p) {
+      delete ((vector<TString>*)p);
+   }
+   static void deleteArray_vectorlETStringgR(void *p) {
+      delete [] ((vector<TString>*)p);
+   }
+   static void destruct_vectorlETStringgR(void *p) {
+      typedef vector<TString> current_t;
+      ((current_t*)p)->~current_t();
+   }
+} // end of namespace ROOT for class vector<TString>
+
 namespace {
   void TriggerDictionaryInitialization_PrimaryHitsDict_Impl() {
     static const char* headers[] = {
@@ -189,6 +252,7 @@ namespace {
 extern int __Cling_Autoloading_Map;
 namespace std{template <typename _Tp> class __attribute__((annotate("$clingAutoload$bits/allocator.h")))  __attribute__((annotate("$clingAutoload$string")))  allocator;
 }
+class __attribute__((annotate("$clingAutoload$TString.h")))  __attribute__((annotate("$clingAutoload$PrimaryHits.hh")))  TString;
 class __attribute__((annotate("$clingAutoload$PrimaryHits.hh")))  PrimaryHits;
 )DICTFWDDCLS";
     static const char* payloadCode = R"DICTPAYLOAD(
