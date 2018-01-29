@@ -8,7 +8,7 @@ The simulation is based on Geant4. Material and geometry of detectors and object
 Complete information of each muon step within detectors, including position, global time, deposit energy, volume name, total number of hits, ?process names, are stored in user-defined class (PrimaryHit) and saved in root files for persistency.
 
 ## Analysis
-The reconstruct, imaging and analysis programs are in directory /analysis. 
+The reconstruct, imaging and analysis programs are in directory /build/analysis. 
 
 The reconstruct program utilizes weight algorithm to calculate muon positions at each detector. The reconstructed result is stored in the same root file as simulation result, with a different key name. Other processes, e.g. diffusion, amplification, electric noise should be able to take effect according to user's interest.
 
