@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "null",
+            "includePath": ["/my_cache/ROOT6.10.02/include"],
+            "defines": [],
+            "browse": {
+                "path": [],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 3
+}

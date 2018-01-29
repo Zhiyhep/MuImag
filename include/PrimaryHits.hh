@@ -39,6 +39,8 @@ class PrimaryHits{
         Int_t GetNhitsInVolume(TString volName);
         // Get mean position in certain volume, using deposit energy as weights
         TVector3 GetMeanPositionInVolume(TString volName);
+        // Check if deposit energy is greater than threshold energy
+        Bool_t IsDetectedInVolume(TString volName, Double_t E_THR);
         void Clean();
 
 };
