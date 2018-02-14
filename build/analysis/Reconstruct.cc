@@ -5,8 +5,6 @@
 //       -> Reconstruct hit position based on weight algorithm
 //       -> Save the result as structure Pos in root file
 //
-R__LOAD_LIBRARY(../../src/PrimaryHits_cc.so)
-
 #include "TFile.h"
 #include "TTree.h"
 #include "TClassTable.h"
@@ -17,6 +15,9 @@ R__LOAD_LIBRARY(../../src/PrimaryHits_cc.so)
 #include <iostream>
 
 void Reconstruct_rw(TString filename){
+    gSystem->AddIncludePath("-I../../include");
+    gSystem->Load("libPhysics");
+    gSystem->Load("../../include/libPrimaryHits");
     TFile *f = new TFile(filename,"update");
     TTree *t = (TTree *)f->Get("G4Event");
     TTree *rt = new TTree("Reconstruct","Reconstructed results");
@@ -57,7 +58,6 @@ void Reconstruct_rw(TString filename){
 }
 
 void Reconstruct(){
-    gSystem->AddIncludePath("-I../../include");
-    gSystem->Load("libPhysics");
+R__LOAD_LIBRARY(../../include/libPrimaryHits.so)
     Reconstruct_rw("../rawdata.root");
 }

@@ -33,7 +33,7 @@ Int_t PrimaryHits::GetNhitsInVolume(TString volName){
 
 // Get mean position in certain volume, using deposit energy as weights
 TVector3 PrimaryHits::GetMeanPositionInVolume(TString volName){
-    Int_t x = 0, y = 0, z = 0;
+    Double_t x = 0, y = 0, z = 0;
     for(Int_t i = 0; i < fNhits; i++){
         if(fDetName[i] == volName){
             x+=fEdep[i]*fPosX[i];

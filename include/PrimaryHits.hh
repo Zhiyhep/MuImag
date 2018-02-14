@@ -45,3 +45,6 @@ class PrimaryHits{
 
 };
 #endif
+#ifdef __MAKECINT__
+#pragma link C++ class PrimaryHits+;
+#endif
