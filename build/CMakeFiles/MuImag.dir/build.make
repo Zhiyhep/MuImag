@@ -153,33 +153,9 @@ CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o.provides: CMakeFiles/MuIma
 CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o.provides.build: CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o
 
 
-CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o: CMakeFiles/MuImag.dir/flags.make
-CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o: ../src/PrimaryHitsDict.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cihenp/g4proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o -c /home/cihenp/g4proj/MuImag/src/PrimaryHitsDict.cc
-
-CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/cihenp/g4proj/MuImag/src/PrimaryHitsDict.cc > CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.i
-
-CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/cihenp/g4proj/MuImag/src/PrimaryHitsDict.cc -o CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.s
-
-CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o.requires:
-
-.PHONY : CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o.requires
-
-CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o.provides: CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o.requires
-	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o.provides.build
-.PHONY : CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o.provides
-
-CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o.provides.build: CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o
-
-
 CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o: CMakeFiles/MuImag.dir/flags.make
 CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o: ../src/MuSteppingAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cihenp/g4proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cihenp/g4proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o -c /home/cihenp/g4proj/MuImag/src/MuSteppingAction.cc
 
 CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.i: cmake_force
@@ -203,7 +179,7 @@ CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o.provides.build: CMakeFiles/MuIma
 
 CMakeFiles/MuImag.dir/src/MuRunAction.cc.o: CMakeFiles/MuImag.dir/flags.make
 CMakeFiles/MuImag.dir/src/MuRunAction.cc.o: ../src/MuRunAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cihenp/g4proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MuImag.dir/src/MuRunAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cihenp/g4proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MuImag.dir/src/MuRunAction.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuRunAction.cc.o -c /home/cihenp/g4proj/MuImag/src/MuRunAction.cc
 
 CMakeFiles/MuImag.dir/src/MuRunAction.cc.i: cmake_force
@@ -227,7 +203,7 @@ CMakeFiles/MuImag.dir/src/MuRunAction.cc.o.provides.build: CMakeFiles/MuImag.dir
 
 CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o: CMakeFiles/MuImag.dir/flags.make
 CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o: ../src/MuPrimaryGeneratorAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cihenp/g4proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cihenp/g4proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o -c /home/cihenp/g4proj/MuImag/src/MuPrimaryGeneratorAction.cc
 
 CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.i: cmake_force
@@ -251,7 +227,7 @@ CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o.provides.build: CMakeFil
 
 CMakeFiles/MuImag.dir/src/MuEventAction.cc.o: CMakeFiles/MuImag.dir/flags.make
 CMakeFiles/MuImag.dir/src/MuEventAction.cc.o: ../src/MuEventAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cihenp/g4proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/MuImag.dir/src/MuEventAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cihenp/g4proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/MuImag.dir/src/MuEventAction.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuEventAction.cc.o -c /home/cihenp/g4proj/MuImag/src/MuEventAction.cc
 
 CMakeFiles/MuImag.dir/src/MuEventAction.cc.i: cmake_force
@@ -275,7 +251,7 @@ CMakeFiles/MuImag.dir/src/MuEventAction.cc.o.provides.build: CMakeFiles/MuImag.d
 
 CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o: CMakeFiles/MuImag.dir/flags.make
 CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o: ../src/MuActionInitialization.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cihenp/g4proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cihenp/g4proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o -c /home/cihenp/g4proj/MuImag/src/MuActionInitialization.cc
 
 CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.i: cmake_force
@@ -303,7 +279,6 @@ MuImag_OBJECTS = \
 "CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o" \
 "CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o" \
 "CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o" \
-"CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o" \
 "CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o" \
 "CMakeFiles/MuImag.dir/src/MuRunAction.cc.o" \
 "CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o" \
@@ -317,14 +292,13 @@ MuImag: CMakeFiles/MuImag.dir/MuImag.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o
-MuImag: CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuRunAction.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuEventAction.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o
 MuImag: CMakeFiles/MuImag.dir/build.make
-MuImag: ../src/libPrimaryHits.so
+MuImag: ../lib/libPrimaryHits.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4Tree.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4GMocren.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4visHepRep.so
@@ -364,7 +338,7 @@ MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4intercoms.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4global.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4clhep.so
 MuImag: CMakeFiles/MuImag.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cihenp/g4proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable MuImag"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cihenp/g4proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable MuImag"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MuImag.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -376,7 +350,6 @@ CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/MuImag.cc.o.requires
 CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o.requires
 CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o.requires
 CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o.requires
-CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o.requires
 CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o.requires
 CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/MuRunAction.cc.o.requires
 CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o.requires

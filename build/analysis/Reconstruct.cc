@@ -17,7 +17,6 @@
 void Reconstruct_rw(TString filename){
     gSystem->AddIncludePath("-I../../include");
     gSystem->Load("libPhysics");
-    gSystem->Load("../../include/libPrimaryHits");
     TFile *f = new TFile(filename,"update");
     TTree *t = (TTree *)f->Get("G4Event");
     TTree *rt = new TTree("Reconstruct","Reconstructed results");
@@ -58,6 +57,6 @@ void Reconstruct_rw(TString filename){
 }
 
 void Reconstruct(){
-R__LOAD_LIBRARY(../../include/libPrimaryHits.so)
+ R__LOAD_LIBRARY(../../include/libPrimaryHits.so)
     Reconstruct_rw("../rawdata.root");
 }

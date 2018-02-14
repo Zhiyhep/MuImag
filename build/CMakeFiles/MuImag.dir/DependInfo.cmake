@@ -13,7 +13,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/cihenp/g4proj/MuImag/src/MuRunAction.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuRunAction.cc.o"
   "/home/cihenp/g4proj/MuImag/src/MuSteppingAction.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o"
   "/home/cihenp/g4proj/MuImag/src/PrimaryHits.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o"
-  "/home/cihenp/g4proj/MuImag/src/PrimaryHitsDict.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
