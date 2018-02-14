@@ -21,7 +21,9 @@ endif()
 #----------------------------------------------------------------------------
 # Add external libraries
 #
-link_libraries("/home/cihenp/g4proj/MuImag/src/libPrimaryHits.so")
+#link_libraries("/home/cihenp/g4proj/MuImag/lib/libPrimaryHits.so")
+include_directories("/home/cihenp/g4proj/MuImag/include")
+set(PrimaryHits_LIBRARIES "/home/cihenp/g4proj/MuImag/include/libPrimaryHits.so")
 #----------------------------------------------------------------------------
 # Setup Geant4 include directories and compile definitions
 # Setup include directory for this project
@@ -45,7 +47,7 @@ include_directories(${ROOT_INCLUDE_DIR})
 add_executable(MuImag MuImag.cc ${sources} ${headers})
 target_link_libraries(MuImag ${Geant4_LIBRARIES})
 target_link_libraries(MuImag ${ROOT_LIBRARIES})
-#target_link_libraries(MuImag -lPrimaryHits)
+target_link_libraries(MuImag ${PrimaryHits_LIBRARIES})
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we
 # build B4a. This is so that we can run the executable directly because it
