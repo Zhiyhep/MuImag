@@ -37,9 +37,9 @@
 
         <constant name="CopperTube_Radius" value="50"/>
         <constant name="CopperTube_Height" value="100"/>
-        <constant name="Target1_Pos_X" value="150."/>
-        <constant name="Target1_Pos_Y" value="-150."/>
-        <constant name="Target1_Pos_Z" value="-150."/>
+        <constant name="Target1_Pos_X" value="100."/>
+        <constant name="Target1_Pos_Y" value="-10."/>
+        <constant name="Target1_Pos_Z" value="-100."/>
 
         <constant name="LeadBox_X" value="100"/>
         <constant name="LeadBox_Y" value="100"/>
