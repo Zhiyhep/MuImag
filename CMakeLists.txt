@@ -21,7 +21,7 @@ endif()
 #----------------------------------------------------------------------------
 # Add external libraries
 #
-#link_libraries("/home/cihenp/g4proj/MuImag/lib/libPrimaryHits.so")
+link_libraries("/home/cihenp/g4proj/MuImag/include/libPrimaryHits.so")
 include_directories("/home/cihenp/g4proj/MuImag/include")
 set(PrimaryHits_LIBRARIES "/home/cihenp/g4proj/MuImag/include/libPrimaryHits.so")
 #----------------------------------------------------------------------------

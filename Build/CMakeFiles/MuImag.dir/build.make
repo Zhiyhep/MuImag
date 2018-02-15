@@ -298,6 +298,7 @@ MuImag: CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuEventAction.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o
 MuImag: CMakeFiles/MuImag.dir/build.make
+MuImag: ../include/libPrimaryHits.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4Tree.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4GMocren.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4visHepRep.so
