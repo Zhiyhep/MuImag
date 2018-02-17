@@ -22,7 +22,7 @@ using namespace std;
 void Event_Viewer(int event_no = 0, TString geometry = "Muon_Setup.root",
                   TString datafile = "../rawdata.root")
 {
-    R__LOAD_LIBRARY(../../include/libPrimaryHits.so)
+    R__LOAD_LIBRARY(../../lib/libPrimaryHits.so)
     gSystem->IgnoreSignal(kSigSegmentationViolation,true);
     TEveManager::Create();
     gGeoManager = gEve->GetGeometry(geometry);

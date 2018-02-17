@@ -298,7 +298,6 @@ MuImag: CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuEventAction.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o
 MuImag: CMakeFiles/MuImag.dir/build.make
-MuImag: ../lib/libPrimaryHits.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4Tree.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4GMocren.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4visHepRep.so
@@ -313,6 +312,7 @@ MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4error_propagation.s
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4readout.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4physicslists.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4parmodels.so
+MuImag: ../lib/libPrimaryHits.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4FR.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4vis_management.so
 MuImag: /home/cihenp/geant/geant4_10_02_p02-install/lib/libG4modeling.so

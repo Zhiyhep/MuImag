@@ -31,12 +31,12 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../include"
   "/home/cihenp/geant/geant4_10_02_p02-install/include/Geant4"
   "/usr/include/qt4"
   "/usr/include/qt4/QtCore"
   "/usr/include/qt4/QtGui"
   "/usr/include/qt4/QtOpenGL"
-  "../include"
   "/my_cache/ROOT6.10.02/include"
   )
 

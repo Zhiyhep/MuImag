@@ -1,0 +1,9 @@
+{ decls }
+namespace std {  }
+
+[ libPrimaryHits.so ]
+# List of selected classes
+class PrimaryHits
+class vector<TString>
+class vector<double>
+header PrimaryHits.hh
