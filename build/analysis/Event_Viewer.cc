@@ -17,9 +17,12 @@
 #include <TVector3.h>
 #include "../../include/PrimaryHits.hh"
 #include "Scatter_Pt.h"
+#include "MultiView.C"
 #include <iostream>
 using namespace std;
-void Event_Viewer(int event_no = 0, TString geometry = "Muon_Setup.root",
+
+MultiView* gMultiView = 0;
+void Event_Viewer(int event_no = 0, TString geometry = "Geometry/Muon_Setup.root",
                   TString datafile = "../rawdata.root")
 {
     R__LOAD_LIBRARY(../../lib/libPrimaryHits.so)
@@ -30,8 +33,8 @@ void Event_Viewer(int event_no = 0, TString geometry = "Muon_Setup.root",
     TGeoVolume* gasVolume = gGeoManager->GetVolume("gasVolume");
     TGeoMaterial* kapton = gGeoManager->GetMaterial("Kapton");
     TGeoMaterial* Ar_CO2 = gGeoManager->GetMaterial("Ar_CO2");
-    kapton->SetTransparency(80);
-    Ar_CO2->SetTransparency(80);
+    kapton->SetTransparency(90);
+    Ar_CO2->SetTransparency(90);
     detVolume->SetLineColor(kBlue);
     gasVolume->SetLineColor(kGreen);
     TGeoNode* node = gGeoManager->GetCurrentNode();
@@ -95,6 +98,22 @@ void Event_Viewer(int event_no = 0, TString geometry = "Muon_Setup.root",
     ps->SetMarkerSize(1.5);
     ps->SetMarkerStyle(3);
     gEve->AddElement(ps);
+    //Multi View
+    gMultiView = new MultiView;
+    gMultiView->f3DView->GetGLViewer()->SetStyle(TGLRnrCtx::kOutline);
+    gMultiView->SetDepth(-10);
+    gMultiView->ImportGeomRPhi(det);
+    gMultiView->ImportEventRPhi(q);
+    gMultiView->ImportEventRPhi(ps);
+    gMultiView->ImportEventRPhi(ls);
+    gMultiView->ImportGeomRhoZ(det);
+    gMultiView->ImportEventRhoZ(q);
+    gMultiView->ImportEventRhoZ(ps);
+    gMultiView->ImportEventRhoZ(ls);
+    gMultiView->SetDepth(0);
+    
+    gEve->GetViewers()->SwitchColorSet();
+    gEve->GetDefaultGLViewer()->SetStyle(TGLRnrCtx::kOutline);
     gEve->Redraw3D(kTRUE);
     f->Close();
 }

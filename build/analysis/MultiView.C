@@ -116,7 +116,7 @@ struct MultiView
 
       pack->NewSlot()->MakeCurrent();
       fRhoZView = gEve->SpawnNewViewer("RhoZ View", "");
-      fRhoZView->GetGLViewer()->SetCurrentCamera(TGLViewer::kCameraOrthoXOY);
+      fRhoZView->GetGLViewer()->SetCurrentCamera(TGLViewer::kCameraOrthoXOZ);
       fRhoZView->AddScene(fRhoZGeomScene);
       fRhoZView->AddScene(fRhoZEventScene);
    }
@@ -135,24 +135,27 @@ struct MultiView
 
    void ImportGeomRPhi(TEveElement* el)
    {
-      fRPhiMgr->ImportElements(el, fRPhiGeomScene);
+      //fRPhiMgr->ImportElements(el, fRPhiGeomScene);
+      fRPhiGeomScene->AddElement(el);
    }
 
    void ImportGeomRhoZ(TEveElement* el)
    {
-      fRhoZMgr->ImportElements(el, fRhoZGeomScene);
+      //fRhoZMgr->ImportElements(el, fRhoZGeomScene);
+      fRhoZGeomScene->AddElement(el);
    }
 
    void ImportEventRPhi(TEveElement* el)
    {
-      fRPhiMgr->ImportElements(el, fRPhiEventScene);
+      //fRPhiMgr->ImportElements(el, fRPhiEventScene);
+      fRPhiEventScene->AddElement(el);
    }
 
    void ImportEventRhoZ(TEveElement* el)
    {
-      fRhoZMgr->ImportElements(el, fRhoZEventScene);
+      //fRhoZMgr->ImportElements(el, fRhoZEventScene);
+      fRhoZEventScene->AddElement(el);
    }
-
    //---------------------------------------------------------------------------
 
    void DestroyEventRPhi()

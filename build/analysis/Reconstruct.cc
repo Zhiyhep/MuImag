@@ -14,6 +14,7 @@
 #include "../../include/PrimaryHits.hh"
 #include <iostream>
 
+R__LOAD_LIBRARY(../../lib/libPrimaryHits.so)
 void Reconstruct_rw(TString filename){
     gSystem->AddIncludePath("-I../../include");
     gSystem->Load("libPhysics");
@@ -57,6 +58,5 @@ void Reconstruct_rw(TString filename){
 }
 
 void Reconstruct(){
- R__LOAD_LIBRARY(../../include/libPrimaryHits.so)
     Reconstruct_rw("../rawdata.root");
 }

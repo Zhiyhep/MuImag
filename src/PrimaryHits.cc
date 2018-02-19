@@ -43,3 +43,7 @@ TVector3 PrimaryHits::GetMeanPositionInVolume(TString volName){
     TVector3 pos(x, y, z);
     return pos;
 }
+
+Bool_t PrimaryHits::IsDetectedInVolume(TString volName, Double_t E_THR){
+    return (GetDepositEnergyInVolume(volName) > E_THR);
+}

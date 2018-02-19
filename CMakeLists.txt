@@ -61,9 +61,6 @@ set(MuImag_SCRIPTS
   run1.mac
   run2.mac
   vis.mac
-  materials.xml
-  Muon_Geometry.gdml
-  Muon_Setup.gdml
   )
 
 foreach(_script ${MuImag_SCRIPTS})

@@ -12,6 +12,11 @@
 /vis/scene/add/volume world
 /vis/sceneHandler/attach
 /vis/viewer/set/viewpointThetaPhi 90. 180.
+/vis/viewer/set/style surface
+/vis/viewer/set/auxiliaryEdge true
+/vis/viewer/set/lineSegmentsPerCircle 100
+/vis/scene/add/axes 0 0 0 1 m
+/vis/scene/notifyHandlers
 /vis/scene/add/trajectories smooth
 /tracking/storeTrajectory 2
 /vis/scene/notifyHandlers
@@ -20,6 +25,8 @@
 /vis/scene/notifyHandlers scene-0
 /vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 1
 /vis/scene/notifyHandlers scene-0
+/vis/scene/add/hits
+/vis/scene/notifyHandlers
 /vis/scene/endOfEventAction accumulate
 /vis/viewer/set/autoRefresh true
 /vis/viewer/refresh

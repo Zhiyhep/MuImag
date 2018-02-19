@@ -35,8 +35,8 @@
         <constant name="Plate_Size_Y" value="500"/>
         <constant name="Plate_Size_Z" value="2.5"/>
 
-        <constant name="CopperTube_Radius" value="50"/>
-        <constant name="CopperTube_Height" value="100"/>
+        <constant name="CopperTube_Radius" value="30"/>
+        <constant name="CopperTube_Height" value="60"/>
         <constant name="Target1_Pos_X" value="100."/>
         <constant name="Target1_Pos_Y" value="-100."/>
         <constant name="Target1_Pos_Z" value="-100."/>

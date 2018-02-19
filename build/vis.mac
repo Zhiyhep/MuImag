@@ -37,12 +37,12 @@
 #/vis/viewer/zoom 2.
 #
 # Specify style (surface, wireframe, auxiliary edges,...)
-#/vis/viewer/set/style wireframe
-#/vis/viewer/set/auxiliaryEdge true
-#/vis/viewer/set/lineSegmentsPerCircle 100
+/vis/viewer/set/style surface
+/vis/viewer/set/auxiliaryEdge true
+/vis/viewer/set/lineSegmentsPerCircle 100
 #
 # Draw coordinate axes:
-#/vis/scene/add/axes 0 0 0 1 m
+/vis/scene/add/axes 0 0 0 1 m
 #
 # Draw smooth trajectories at end of event, showing trajectory points
 # as markers 2 pixels wide:
@@ -53,7 +53,7 @@
 # (if too many tracks cause core dump => /tracking/storeTrajectory 0)
 #
 # Draw hits at end of event:
-#/vis/scene/add/hits
+/vis/scene/add/hits
 #
 # To draw only gammas:
 #/vis/filtering/trajectories/create/particleFilter
