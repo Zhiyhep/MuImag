@@ -25,10 +25,12 @@ void Reconstruct_rw(TString filename){
     TVector3  *pos2 = new TVector3();
     TVector3  *pos3 = new TVector3();
     TVector3  *pos4 = new TVector3();
+    int event_no = 0;
     rt->Branch("Pos1","TVector3",&pos1);
     rt->Branch("Pos2","TVector3",&pos2);
     rt->Branch("Pos3","TVector3",&pos3);
     rt->Branch("Pos4","TVector3",&pos4);
+    rt->Branch("Event_No",&event_no,"event_no/I");
 
     PrimaryHits *phit = new PrimaryHits;
     TBranch *event = t->GetBranch("event");
@@ -50,6 +52,7 @@ void Reconstruct_rw(TString filename){
            pos2->SetXYZ(p2.x(),p2.y(),p2.z());
            pos3->SetXYZ(p3.x(),p3.y(),p3.z());
            pos4->SetXYZ(p4.x(),p4.y(),p4.z());
+           event_no = nevent;
            rt->Fill();
            }
     }

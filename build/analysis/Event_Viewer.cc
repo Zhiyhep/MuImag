@@ -1,3 +1,11 @@
+// A preliminary event viewer
+// Writer: Zhi Yu
+// Date: 2018/1/29
+// Flow: -> Read geometry
+//       -> Read data
+//       -> Set geometry elements
+//       -> MultiView
+//
 #include <TFile.h>
 #include <TTree.h>
 #include <TEveManager.h>

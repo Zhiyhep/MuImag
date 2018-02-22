@@ -29,7 +29,7 @@ Double_t my_transfer_function(const Double_t *px, const Double_t*){
     return x/1000;
 }
 void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (&NBins)[3]){
-    TFile *f = new TFile(filename,"update");
+    TFile *f = new TFile(filename,"readonly");
     TTree *t = (TTree*)f->Get("Reconstruct");
     TVector3  *pos1 = new TVector3();
     TVector3  *pos2 = new TVector3();
@@ -141,7 +141,7 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
 }
 
 void PoCA(){
-    const Double_t ObjectArea_halfsize[3] = {25, 25, 25};
+    const Double_t ObjectArea_halfsize[3] = {15, 15, 15};
     const Int_t NBins[3] = {50,50,50};
     Imag("../rawdata.root",ObjectArea_halfsize,NBins);
 }
