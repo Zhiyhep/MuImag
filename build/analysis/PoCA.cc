@@ -29,7 +29,7 @@ Double_t my_transfer_function(const Double_t *px, const Double_t*){
     return x/1000;
 }
 void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (&NBins)[3]){
-    TFile *f = new TFile(filename,"update");
+    TFile *f = new TFile(filename,"readonly");
     TTree *t = (TTree*)f->Get("Reconstruct");
     TVector3  *pos1 = new TVector3();
     TVector3  *pos2 = new TVector3();
@@ -64,17 +64,23 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
     for(Int_t i = 0; i < nentry; i++){
         t->GetEntry(i);
         TVector3 Incident_Dir = (*pos2-*pos1).Unit();
-        Double_t Incident_Ang = TMath::ACos(-Incident_Dir.z()); // Incident angle [rad]
+        Double_t Incident_Ang = TMath::ACos(-Incident_Dir.z());
+        Double_t Incident_Ang_X = TMath::ATan(-Incident_Dir.x()/Incident_Dir.z()); // Incident angle [rad]
+        Double_t Incident_Ang_Y = TMath::ATan(-Incident_Dir.y()/Incident_Dir.z()); // Incident angle [rad]
         TVector3 Exit_Dir = (*pos4-*pos3).Unit();
-        Double_t Exit_Ang = TMath::ACos(-Exit_Dir.z()); // Exit angle [rad]
+        Double_t Exit_Ang = TMath::ACos(-Exit_Dir.z());
+        Double_t Exit_Ang_X = TMath::ATan(-Exit_Dir.x()/Exit_Dir.z()); // Exit angle [rad]
+        Double_t Exit_Ang_Y = TMath::ATan(-Exit_Dir.y()/Exit_Dir.z()); // Exit angle [rad]
         TVector3 Pt = Scatter_Pt(*pos1,Incident_Dir,*pos3,Exit_Dir);
         std::cout<<i<<std::endl;
-        std::cout<<"Incident_Ang: "<<Incident_Ang*180/TMath::Pi()<<" degree"<<std::endl;
-        std::cout<<"Exit_Ang: "<<Exit_Ang*180/TMath::Pi()<<" degree"<<std::endl;
+        std::cout<<"Incident_Ang_X: "<<Incident_Ang_X*180/TMath::Pi()<<" degree"<<std::endl;
+        std::cout<<"Incident_Ang_Y: "<<Incident_Ang_Y*180/TMath::Pi()<<" degree"<<std::endl;
+        std::cout<<"Exit_Ang_X: "<<Exit_Ang_X*180/TMath::Pi()<<" degree"<<std::endl;
+        std::cout<<"Exit_Ang_Y: "<<Exit_Ang_Y*180/TMath::Pi()<<" degree"<<std::endl;
         std::cout<<"Pt: ("<<Pt.x()<<", "<<Pt.y()<<", "<<Pt.z()<<")"<<std::endl;
         if(TMath::Abs(Pt.x())<=HalfX && TMath::Abs(Pt.y())<=HalfY && TMath::Abs(Pt.z())<=HalfZ){
             //Calculate scatter density [mrad^2/cm]
-            Double_t S = TMath::Power(Exit_Ang-Incident_Ang,2)/dZ*TMath::Cos((Incident_Ang+Exit_Ang)/2)*1e6;
+            Double_t S = (TMath::Power(Exit_Ang_X-Incident_Ang_X,2)+TMath::Power(Exit_Ang_Y-Incident_Ang_Y,2))/dZ/2*TMath::Cos((Incident_Ang+Exit_Ang)/2)*1e6;
             // Index of scatter point
             Int_t Pt_nx = TMath::Floor((Pt.x()+HalfX)/dX);
             Int_t Pt_ny = TMath::Floor((Pt.y()+HalfY)/dY);
@@ -114,6 +120,10 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
             for(Int_t nz = 0; nz < NBin_Z; nz++){
                 Scatt_Density[nx][ny][nz] = Scatt_Density[nx][ny][nz]/Ntrack[nx][ny][nz];
                 h3->SetBinContent(nx+1,ny+1,nz+1,Scatt_Density[nx][ny][nz]);
+                if(Scatt_Density[nx][ny][nz] > 0){ 
+                   std::cout << Scatt_Density[nx][ny][nz]<<std::endl;
+                   std::cout << "Ntrack: " << Ntrack[nx][ny][nz]<< std::endl;
+                }
             }
         }
     }
@@ -131,7 +141,7 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
 }
 
 void PoCA(){
-    const Double_t ObjectArea_halfsize[3] = {25, 25, 25};
-    const Int_t NBins[3] = {20,20,20};
+    const Double_t ObjectArea_halfsize[3] = {15, 15, 15};
+    const Int_t NBins[3] = {50,50,50};
     Imag("../rawdata.root",ObjectArea_halfsize,NBins);
 }

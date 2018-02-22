@@ -3,7 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o"
   "CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o"
   "CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o"
-  "CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o"
   "CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o"
   "CMakeFiles/MuImag.dir/src/MuRunAction.cc.o"
   "CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o"

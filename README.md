@@ -18,3 +18,16 @@ The analysis programs serve as a toolkit for inspecting events and analysis simu
 * Event_Viewer: visulizes the detector and object layout and each event.
 * ? Error_Function: calculate the error rate (or serves as loss function?) of imaging.
 * ? Distribution: plot distributions of important quantities such as scatter angle, displacement.
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+![](/build/analysis/pics/Eve.png)
+=======
+![](https://zhiyhep.github.com/MuImag1.1/build/analysis/pics/Eve.png)
+>>>>>>> eb3834e3fdc6cfed73c457c0dddd43f9d6ab59ef
+=======
+![](/build/analysis/pics/Eve.png)
+>>>>>>> 2ff1f29298b48d1046849f0682e5eeb596ddeeb9
+>>>>>>> MuImag1.1

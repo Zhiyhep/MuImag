@@ -5,8 +5,6 @@
 //       -> Reconstruct hit position based on weight algorithm
 //       -> Save the result as structure Pos in root file
 //
-R__LOAD_LIBRARY(../../src/PrimaryHits_cc.so)
-
 #include "TFile.h"
 #include "TTree.h"
 #include "TClassTable.h"
@@ -16,7 +14,10 @@ R__LOAD_LIBRARY(../../src/PrimaryHits_cc.so)
 #include "../../include/PrimaryHits.hh"
 #include <iostream>
 
+R__LOAD_LIBRARY(../../lib/libPrimaryHits.so)
 void Reconstruct_rw(TString filename){
+    gSystem->AddIncludePath("-I../../include");
+    gSystem->Load("libPhysics");
     TFile *f = new TFile(filename,"update");
     TTree *t = (TTree *)f->Get("G4Event");
     TTree *rt = new TTree("Reconstruct","Reconstructed results");
@@ -24,10 +25,12 @@ void Reconstruct_rw(TString filename){
     TVector3  *pos2 = new TVector3();
     TVector3  *pos3 = new TVector3();
     TVector3  *pos4 = new TVector3();
+    int event_no = 0;
     rt->Branch("Pos1","TVector3",&pos1);
     rt->Branch("Pos2","TVector3",&pos2);
     rt->Branch("Pos3","TVector3",&pos3);
     rt->Branch("Pos4","TVector3",&pos4);
+    rt->Branch("Event_No",&event_no,"event_no/I");
 
     PrimaryHits *phit = new PrimaryHits;
     TBranch *event = t->GetBranch("event");
@@ -49,6 +52,7 @@ void Reconstruct_rw(TString filename){
            pos2->SetXYZ(p2.x(),p2.y(),p2.z());
            pos3->SetXYZ(p3.x(),p3.y(),p3.z());
            pos4->SetXYZ(p4.x(),p4.y(),p4.z());
+           event_no = nevent;
            rt->Fill();
            }
     }
@@ -57,7 +61,5 @@ void Reconstruct_rw(TString filename){
 }
 
 void Reconstruct(){
-    gSystem->AddIncludePath("-I../../include");
-    gSystem->Load("libPhysics");
     Reconstruct_rw("../rawdata.root");
 }

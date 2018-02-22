@@ -119,7 +119,7 @@ int main(int argc,char** argv)
 
   // Set mandatory initialization classes
   //
-  auto detConstruction = new MuDetectorConstruction("Muon_Setup.gdml");
+  auto detConstruction = new MuDetectorConstruction("../src/Muon_Setup.gdml");
   runManager->SetUserInitialization(detConstruction);
 
   runManager->SetUserInitialization(new FTFP_BERT);

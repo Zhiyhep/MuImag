@@ -13,7 +13,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/cihenp/g4proj/MuImag/src/MuRunAction.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuRunAction.cc.o"
   "/home/cihenp/g4proj/MuImag/src/MuSteppingAction.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o"
   "/home/cihenp/g4proj/MuImag/src/PrimaryHits.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o"
-  "/home/cihenp/g4proj/MuImag/src/PrimaryHitsDict.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -32,12 +31,12 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../include"
   "/home/cihenp/geant/geant4_10_02_p02-install/include/Geant4"
   "/usr/include/qt4"
   "/usr/include/qt4/QtCore"
   "/usr/include/qt4/QtGui"
   "/usr/include/qt4/QtOpenGL"
-  "../include"
   "/my_cache/ROOT6.10.02/include"
   )
 

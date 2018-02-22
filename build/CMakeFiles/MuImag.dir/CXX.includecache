@@ -312,54 +312,6 @@ PrimaryHits.hh
 vector
 -
 
-/home/cihenp/g4proj/MuImag/src/PrimaryHitsDict.cc
-stddef.h
--
-stdio.h
--
-stdlib.h
--
-string.h
--
-assert.h
--
-RConfig.h
-/home/cihenp/g4proj/MuImag/src/RConfig.h
-TClass.h
-/home/cihenp/g4proj/MuImag/src/TClass.h
-TDictAttributeMap.h
-/home/cihenp/g4proj/MuImag/src/TDictAttributeMap.h
-TInterpreter.h
-/home/cihenp/g4proj/MuImag/src/TInterpreter.h
-TROOT.h
-/home/cihenp/g4proj/MuImag/src/TROOT.h
-TBuffer.h
-/home/cihenp/g4proj/MuImag/src/TBuffer.h
-TMemberInspector.h
-/home/cihenp/g4proj/MuImag/src/TMemberInspector.h
-TInterpreter.h
-/home/cihenp/g4proj/MuImag/src/TInterpreter.h
-TVirtualMutex.h
-/home/cihenp/g4proj/MuImag/src/TVirtualMutex.h
-TError.h
-/home/cihenp/g4proj/MuImag/src/TError.h
-RtypesImp.h
-/home/cihenp/g4proj/MuImag/src/RtypesImp.h
-TIsAProxy.h
-/home/cihenp/g4proj/MuImag/src/TIsAProxy.h
-TFileMergeInfo.h
-/home/cihenp/g4proj/MuImag/src/TFileMergeInfo.h
-algorithm
--
-TCollectionProxyInfo.h
-/home/cihenp/g4proj/MuImag/src/TCollectionProxyInfo.h
-TDataMember.h
-/home/cihenp/g4proj/MuImag/src/TDataMember.h
-PrimaryHits.hh
-/home/cihenp/g4proj/MuImag/src/PrimaryHits.hh
-PrimaryHits.hh
-/home/cihenp/g4proj/MuImag/src/PrimaryHits.hh
-
 /home/cihenp/geant/geant4_10_02_p02-install/include/Geant4/CLHEP/Evaluator/Evaluator.h
 string
 -
@@ -8340,12 +8292,6 @@ RConfig.h
 stddef.h
 -
 
-/my_cache/ROOT6.10.02/include/RtypesImp.h
-TMemberInspector.h
-/my_cache/ROOT6.10.02/include/TMemberInspector.h
-TError.h
-/my_cache/ROOT6.10.02/include/TError.h
-
 /my_cache/ROOT6.10.02/include/TArray.h
 Rtypes.h
 /my_cache/ROOT6.10.02/include/Rtypes.h
@@ -8424,18 +8370,6 @@ TIterator.h
 TString.h
 /my_cache/ROOT6.10.02/include/TString.h
 
-/my_cache/ROOT6.10.02/include/TCollectionProxyInfo.h
-TError.h
-/my_cache/ROOT6.10.02/include/TError.h
-vector
--
-forward_list
--
-
-/my_cache/ROOT6.10.02/include/TDataMember.h
-TDictionary.h
-/my_cache/ROOT6.10.02/include/TDictionary.h
-
 /my_cache/ROOT6.10.02/include/TDataType.h
 TDictionary.h
 /my_cache/ROOT6.10.02/include/TDictionary.h
@@ -8445,12 +8379,6 @@ string
 -
 Rtypes.h
 /my_cache/ROOT6.10.02/include/Rtypes.h
-
-/my_cache/ROOT6.10.02/include/TDictAttributeMap.h
-TObject.h
-/my_cache/ROOT6.10.02/include/TObject.h
-THashTable.h
-/my_cache/ROOT6.10.02/include/THashTable.h
 
 /my_cache/ROOT6.10.02/include/TDictionary.h
 TNamed.h
@@ -8494,12 +8422,6 @@ ROOT/TRWSpinLock.hxx
 mutex
 -
 
-/my_cache/ROOT6.10.02/include/TFileMergeInfo.h
-TObject.h
-/my_cache/ROOT6.10.02/include/TObject.h
-TString.h
-/my_cache/ROOT6.10.02/include/TString.h
-
 /my_cache/ROOT6.10.02/include/TGenericClassInfo.h
 vector
 -
@@ -8513,18 +8435,6 @@ TCollection.h
 /my_cache/ROOT6.10.02/include/TCollection.h
 TString.h
 /my_cache/ROOT6.10.02/include/TString.h
-
-/my_cache/ROOT6.10.02/include/TInterpreter.h
-TDictionary.h
-/my_cache/ROOT6.10.02/include/TDictionary.h
-TVirtualMutex.h
-/my_cache/ROOT6.10.02/include/TVirtualMutex.h
-map
--
-typeinfo
--
-vector
--
 
 /my_cache/ROOT6.10.02/include/TIsAProxy.h
 TVirtualIsAProxy.h
@@ -8648,10 +8558,6 @@ TError.h
 TMatrixTBase.h
 /my_cache/ROOT6.10.02/include/TMatrixTBase.h
 
-/my_cache/ROOT6.10.02/include/TMemberInspector.h
-Rtypes.h
-/my_cache/ROOT6.10.02/include/Rtypes.h
-
 /my_cache/ROOT6.10.02/include/TNamed.h
 TObject.h
 /my_cache/ROOT6.10.02/include/TObject.h
@@ -8684,16 +8590,6 @@ stdarg.h
 string
 -
 iosfwd
--
-
-/my_cache/ROOT6.10.02/include/TROOT.h
-TDirectory.h
-/my_cache/ROOT6.10.02/include/TDirectory.h
-TList.h
-/my_cache/ROOT6.10.02/include/TList.h
-RConfigure.h
-/my_cache/ROOT6.10.02/include/RConfigure.h
-atomic
 -
 
 /my_cache/ROOT6.10.02/include/TSchemaHelper.h
@@ -8791,10 +8687,6 @@ RVersion.h
 /my_cache/ROOT6.10.02/include/RVersion.h
 
 /my_cache/ROOT6.10.02/include/TVirtualIsAProxy.h
-
-/my_cache/ROOT6.10.02/include/TVirtualMutex.h
-TObject.h
-/my_cache/ROOT6.10.02/include/TObject.h
 
 /my_cache/ROOT6.10.02/include/TVirtualTreePlayer.h
 TObject.h

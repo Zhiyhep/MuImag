@@ -38,7 +38,7 @@
 #include "PrimaryHits.hh"
 #endif
 
-class PrimaryHits;
+//class PrimaryHits;
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 MuRunAction::MuRunAction(G4String name, const MuDetectorConstruction* detectorConstruction)

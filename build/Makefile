@@ -410,33 +410,6 @@ src/PrimaryHits.cc.s:
 	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/PrimaryHits.cc.s
 .PHONY : src/PrimaryHits.cc.s
 
-src/PrimaryHitsDict.o: src/PrimaryHitsDict.cc.o
-
-.PHONY : src/PrimaryHitsDict.o
-
-# target to build an object file
-src/PrimaryHitsDict.cc.o:
-	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.o
-.PHONY : src/PrimaryHitsDict.cc.o
-
-src/PrimaryHitsDict.i: src/PrimaryHitsDict.cc.i
-
-.PHONY : src/PrimaryHitsDict.i
-
-# target to preprocess a source file
-src/PrimaryHitsDict.cc.i:
-	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.i
-.PHONY : src/PrimaryHitsDict.cc.i
-
-src/PrimaryHitsDict.s: src/PrimaryHitsDict.cc.s
-
-.PHONY : src/PrimaryHitsDict.s
-
-# target to generate assembly for a file
-src/PrimaryHitsDict.cc.s:
-	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/PrimaryHitsDict.cc.s
-.PHONY : src/PrimaryHitsDict.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -477,9 +450,6 @@ help:
 	@echo "... src/PrimaryHits.o"
 	@echo "... src/PrimaryHits.i"
 	@echo "... src/PrimaryHits.s"
-	@echo "... src/PrimaryHitsDict.o"
-	@echo "... src/PrimaryHitsDict.i"
-	@echo "... src/PrimaryHitsDict.s"
 .PHONY : help
 
 
