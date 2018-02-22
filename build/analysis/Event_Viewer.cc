@@ -102,7 +102,7 @@ void Event_Viewer(int event_no = 1, TString geometry = "Geometry/Muon_Setup.root
     ps->SetNextPoint(p3.x(),p3.y(),p3.z());
     ps->SetNextPoint(p4.x(),p4.y(),p4.z());
     ps->SetNextPoint(pt.x(),pt.y(),pt.z());
-    ps->SetMarkerColor(5);
+    ps->SetMarkerColor(kRed);
     ps->SetMarkerSize(1.5);
     ps->SetMarkerStyle(3);
     gEve->AddElement(ps);
