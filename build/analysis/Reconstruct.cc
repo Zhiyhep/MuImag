@@ -13,6 +13,7 @@
 #include "TVector3.h"
 #include "../../include/PrimaryHits.hh"
 #include <iostream>
+#include "DetectorLayout.hh"
 
 R__LOAD_LIBRARY(../../lib/libPrimaryHits.so)
 void Reconstruct_rw(TString filename){
@@ -48,12 +49,18 @@ void Reconstruct_rw(TString filename){
            TVector3 p2 = phit->GetMeanPositionInVolume("gas2");
            TVector3 p3 = phit->GetMeanPositionInVolume("gas3");
            TVector3 p4 = phit->GetMeanPositionInVolume("gas4");
-           pos1->SetXYZ(p1.x(),p1.y(),p1.z());
-           pos2->SetXYZ(p2.x(),p2.y(),p2.z());
-           pos3->SetXYZ(p3.x(),p3.y(),p3.z());
-           pos4->SetXYZ(p4.x(),p4.y(),p4.z());
-           event_no = nevent;
-           rt->Fill();
+           bool p1_good = (p1.x()<=Plate_Size_X/20)&&(p1.y()<=Plate_Size_Y/20);
+           bool p2_good = (p2.x()<=Plate_Size_X/20)&&(p2.y()<=Plate_Size_Y/20);
+           bool p3_good = (p3.x()<=Plate_Size_X/20)&&(p3.y()<=Plate_Size_Y/20);
+           bool p4_good = (p4.x()<=Plate_Size_X/20)&&(p4.y()<=Plate_Size_Y/20);
+           if(p1_good && p2_good && p3_good && p4_good){
+               pos1->SetXYZ(p1.x(),p1.y(),p1.z());
+               pos2->SetXYZ(p2.x(),p2.y(),p2.z());
+               pos3->SetXYZ(p3.x(),p3.y(),p3.z());
+               pos4->SetXYZ(p4.x(),p4.y(),p4.z());
+               event_no = nevent;
+               rt->Fill();
+           }
            }
     }
     rt->Write("",TObject::kOverwrite);

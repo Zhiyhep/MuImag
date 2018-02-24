@@ -7,6 +7,7 @@
 //       -> For each event, find the voxels it transverses
 //       -> For each event, renew the scatter density of corresponding voxels
 //       -> Renew the density matrix and track number matrix
+//       -> Save results to PoCA_Result.dat
 //       -> Plot the density matrix
 //
 
@@ -23,7 +24,9 @@
 #include "TList.h"
 #include "TCanvas.h"
 #include <iostream>
-
+#include <fstream>
+#include <iomanip>
+#include "DetectorLayout.hh"
 Double_t my_transfer_function(const Double_t *px, const Double_t*){
     const Double_t x = *px;
     return x/1000;
@@ -35,15 +38,18 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
     TVector3  *pos2 = new TVector3();
     TVector3  *pos3 = new TVector3();
     TVector3  *pos4 = new TVector3();
+    int event_no = 0;
 
     TBranch *br1 = t->GetBranch("Pos1");
     TBranch *br2 = t->GetBranch("Pos2");
     TBranch *br3 = t->GetBranch("Pos3");
     TBranch *br4 = t->GetBranch("Pos4");
+    TBranch *br5 = t->GetBranch("Event_No");
     br1->SetAddress(&pos1);
     br2->SetAddress(&pos2);
     br3->SetAddress(&pos3);
     br4->SetAddress(&pos4);
+    br5->SetAddress(&event_no);
 
     Int_t nentry = t->GetEntries();
     Double_t E_THR = 0.; // Lowest deposit energy to be detected
@@ -73,11 +79,8 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
         Double_t Exit_Ang_Y = TMath::ATan(-Exit_Dir.y()/Exit_Dir.z()); // Exit angle [rad]
         TVector3 Pt = Scatter_Pt(*pos1,Incident_Dir,*pos3,Exit_Dir);
         std::cout<<i<<std::endl;
-        std::cout<<"Incident_Ang_X: "<<Incident_Ang_X*180/TMath::Pi()<<" degree"<<std::endl;
-        std::cout<<"Incident_Ang_Y: "<<Incident_Ang_Y*180/TMath::Pi()<<" degree"<<std::endl;
-        std::cout<<"Exit_Ang_X: "<<Exit_Ang_X*180/TMath::Pi()<<" degree"<<std::endl;
-        std::cout<<"Exit_Ang_Y: "<<Exit_Ang_Y*180/TMath::Pi()<<" degree"<<std::endl;
-        std::cout<<"Pt: ("<<Pt.x()<<", "<<Pt.y()<<", "<<Pt.z()<<")"<<std::endl;
+        std::cout<<"event number: "<<event_no<<std::endl;
+        //std::cout<<"Pt: ("<<Pt.x()<<", "<<Pt.y()<<", "<<Pt.z()<<")"<<std::endl;
         if(TMath::Abs(Pt.x())<=HalfX && TMath::Abs(Pt.y())<=HalfY && TMath::Abs(Pt.z())<=HalfZ){
             //Calculate scatter density [mrad^2/cm]
             Double_t S = (TMath::Power(Exit_Ang_X-Incident_Ang_X,2)+TMath::Power(Exit_Ang_Y-Incident_Ang_Y,2))/dZ/2*TMath::Cos((Incident_Ang+Exit_Ang)/2)*1e6;
@@ -95,7 +98,7 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
                 // Index of P
                 Int_t P_nx = TMath::Floor((P.x()+HalfX)/dX);
                 Int_t P_ny = TMath::Floor((P.y()+HalfY)/dY);
-                std::cout<<P_nx<<", "<<P_ny<<std::endl;
+               // std::cout<<P_nx<<", "<<P_ny<<std::endl;
                 Ntrack[P_nx][P_ny][nz]++;
             } 
             for(Int_t nz = Pt_nz+1; nz < NBin_Z; nz++){
@@ -106,28 +109,55 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
                 // Index of P
                 Int_t P_nx = TMath::Floor((P.x()+HalfX)/dX);
                 Int_t P_ny = TMath::Floor((P.y()+HalfY)/dY);
-                std::cout<<P_nx<<", "<<P_ny<<std::endl;
+                //std::cout<<P_nx<<", "<<P_ny<<std::endl;
                 Ntrack[P_nx][P_ny][nz]++;
             } 
         }
+        else{
+            TVector3 Mid_Dir = (Incident_Dir+Exit_Dir)*0.5;
+            Mid_Dir = Mid_Dir.Unit();
+            for(int nz = 0;nz < NBin_Z;nz++){
+                // The line function: P = *pos2+L*Incident_Dir
+                Double_t L = (((nz+0.5)*dZ-HalfZ)-(*pos2).z())/Incident_Dir.z();  
+                TVector3 P = *pos2 + L*Incident_Dir;
+                Int_t P_nx = TMath::Floor((P.x()+HalfX)/dX);
+                Int_t P_ny = TMath::Floor((P.y()+HalfY)/dY);
+                Ntrack[P_nx][P_ny][nz]++;     
+            }
+            std::cout<<"Incident_Ang_X: "<<Incident_Ang_X*180/TMath::Pi()<<" degree"<<std::endl;
+            std::cout<<"Incident_Ang_Y: "<<Incident_Ang_Y*180/TMath::Pi()<<" degree"<<std::endl;
+            std::cout<<"Exit_Ang_X: "<<Exit_Ang_X*180/TMath::Pi()<<" degree"<<std::endl;
+            std::cout<<"Exit_Ang_Y: "<<Exit_Ang_Y*180/TMath::Pi()<<" degree"<<std::endl;
+        }
+
     }
     f->Close();
+    // output file
+    ofstream output("PoCA_Result.dat");
     // Renew scatter density matrix
     TH3F *h3 = new TH3F("Muon Image","Muon Image",NBin_X,-HalfX, HalfX,NBin_Y,-HalfY,HalfY
                ,NBin_Z,-HalfZ,HalfZ);
     for(Int_t nx = 0; nx < NBin_X; nx++){
         for(Int_t ny = 0; ny < NBin_Y; ny++){
             for(Int_t nz = 0; nz < NBin_Z; nz++){
-                Scatt_Density[nx][ny][nz] = Scatt_Density[nx][ny][nz]/Ntrack[nx][ny][nz];
-                h3->SetBinContent(nx+1,ny+1,nz+1,Scatt_Density[nx][ny][nz]);
-                if(Scatt_Density[nx][ny][nz] > 0){ 
+                if(Ntrack[nx][ny][nz] == 0) Scatt_Density[nx][ny][nz] = 0;
+                else{
+                      Scatt_Density[nx][ny][nz] = Scatt_Density[nx][ny][nz]/Ntrack[nx][ny][nz];
+                      h3->SetBinContent(nx+1,ny+1,nz+1,Scatt_Density[nx][ny][nz]);
+                }
+                if(Scatt_Density[nx][ny][nz] > 0){
+                   output <<setprecision(10)<< nx*dX-HalfX+dX/2<<" "
+                          << ny*dY-HalfY+dY/2 <<" "<<nz*dZ-HalfZ+dZ/2
+                          << " " <<  Scatt_Density[nx][ny][nz] 
+                          << " " << Ntrack[nx][ny][nz] << std::endl;
                    std::cout << Scatt_Density[nx][ny][nz]<<std::endl;
                    std::cout << "Ntrack: " << Ntrack[nx][ny][nz]<< std::endl;
                 }
             }
         }
     }
-
+    std::cout << "good" <<std::endl;
+//    output.close();
     // Plot scatter density
     gStyle->SetCanvasPreferGL(1);
     TCanvas *c = new TCanvas("glc","MuImag",0,0,800,500);
@@ -138,10 +168,11 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
     }
     gStyle->SetPalette(1);
     h3->Draw("glcolz");
+    std::cout <<"done" << std::endl;
 }
 
 void PoCA(){
-    const Double_t ObjectArea_halfsize[3] = {15, 15, 15};
+    const double ObjectArea_halfsize[3] = {Plate_Size_X/20,Plate_Size_Y/20,ObjectAreaWidth/20};
     const Int_t NBins[3] = {50,50,50};
     Imag("../rawdata.root",ObjectArea_halfsize,NBins);
 }

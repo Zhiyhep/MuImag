@@ -9,8 +9,7 @@
 #include "Scatter_Pt.h"
 #include "MultiView.C"
 #include <iostream>
-
-const double ObjectArea_halfw = 15;
+#include "DetectorLayout.hh"
 void Plot_PoCA(TString geometry = "Geometry/Muon_Setup.root",
                TString datafile = "../rawdata.root")
 {
@@ -66,7 +65,7 @@ void Plot_PoCA(TString geometry = "Geometry/Muon_Setup.root",
         double Scatt_Ang_Y = Exit_Ang_Y - Incident_Ang_Y;
         double S = (TMath::Power(Scatt_Ang_X,2)+TMath::Power(Scatt_Ang_Y,2))/2*1e6;
         TVector3 Pt = Scatter_Pt(*pos1,Incident_Dir,*pos3,Exit_Dir);
-        if(TMath::Abs(Pt.z())<ObjectArea_halfw && S > ObjectArea_halfw){
+        if(TMath::Abs(Pt.z())<ObjectAreaWidth/20 && S > ObjectAreaWidth/20){
             ps->SetNextPoint(Pt.x(),Pt.y(),Pt.z());
             std::cout << event_no <<": S = " << S << std::endl;
         }
