@@ -29,7 +29,7 @@
 #include "DetectorLayout.hh"
 Double_t my_transfer_function(const Double_t *px, const Double_t*){
     const Double_t x = *px;
-    return x/1000;
+    return x/300;
 }
 void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (&NBins)[3]){
     TFile *f = new TFile(filename,"readonly");
@@ -132,8 +132,23 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
 
     }
     f->Close();
-    // output file
-    ofstream output("PoCA_Result.dat");
+
+    struct PoCA_Result{
+        //coordinates of voxel
+        double fx;
+        double fy;
+        double fz;
+        //reconstructed scatter density
+        double fs;
+        //number of tracks that passes the voxel
+        int ntrack;
+    };
+    PoCA_Result result;
+    //output file
+    TFile *fout = new TFile("PoCA_Result.root","recreate");
+    TTree *tout = new TTree("PoCA","Result of PoCA algorithm");
+    tout->Branch("Scatt_density",&result.fx,"fx/D:fy/D:fz/D:scatt_density/D:ntrack/I");
+
     // Renew scatter density matrix
     TH3F *h3 = new TH3F("Muon Image","Muon Image",NBin_X,-HalfX, HalfX,NBin_Y,-HalfY,HalfY
                ,NBin_Z,-HalfZ,HalfZ);
@@ -145,19 +160,17 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
                       Scatt_Density[nx][ny][nz] = Scatt_Density[nx][ny][nz]/Ntrack[nx][ny][nz];
                       h3->SetBinContent(nx+1,ny+1,nz+1,Scatt_Density[nx][ny][nz]);
                 }
-                if(Scatt_Density[nx][ny][nz] > 0){
-                   output <<setprecision(10)<< nx*dX-HalfX+dX/2<<" "
-                          << ny*dY-HalfY+dY/2 <<" "<<nz*dZ-HalfZ+dZ/2
-                          << " " <<  Scatt_Density[nx][ny][nz] 
-                          << " " << Ntrack[nx][ny][nz] << std::endl;
-                   std::cout << Scatt_Density[nx][ny][nz]<<std::endl;
-                   std::cout << "Ntrack: " << Ntrack[nx][ny][nz]<< std::endl;
-                }
+                result.fx = nx*dX-HalfX+dX/2;
+                result.fy = ny*dY-HalfY+dY/2;
+                result.fz = nz*dZ-HalfZ+dZ/2;
+                result.fs = Scatt_Density[nx][ny][nz];
+                result.ntrack = Ntrack[nx][ny][nz];
+                tout->Fill();
             }
         }
     }
-    std::cout << "good" <<std::endl;
-//    output.close();
+    tout->Print();
+    tout->Write();
     // Plot scatter density
     gStyle->SetCanvasPreferGL(1);
     TCanvas *c = new TCanvas("glc","MuImag",0,0,800,500);
@@ -173,6 +186,6 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
 
 void PoCA(){
     const double ObjectArea_halfsize[3] = {Plate_Size_X/20,Plate_Size_Y/20,ObjectAreaWidth/20};
-    const Int_t NBins[3] = {50,50,50};
+    const Int_t NBins[3] = {20,20,20};
     Imag("../rawdata.root",ObjectArea_halfsize,NBins);
 }
