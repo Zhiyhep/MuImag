@@ -28,3 +28,4 @@ The analysis programs serve as a toolkit for inspecting events and analysis simu
 
 ### PoCA Result
 ![PoCA Image with 10<sup>6</sup> events](/build/analysis/pics/PoCA_Imag.png)
+<center>PoCA Image with 10<sup>6</sup>events</center>
