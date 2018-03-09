@@ -29,8 +29,8 @@
 #include "DetectorLayout.hh"
 Double_t my_transfer_function(const Double_t *x, const Double_t*)
 {
-  if(*x < 2.3) return 0;
-  if(*x < 13.) return 0.1;
+  if(*x < 5) return 0;
+  if(*x < 26.) return 0.1;
   if(*x < 78.) return 0.3; 
   return 0.6;
 }
@@ -60,8 +60,18 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
     const Int_t NBin_X = NBins[0], NBin_Y = NBins[1], NBin_Z = NBins[2];
     const Double_t HalfX = ObjArea_halfsize[0], HalfY = ObjArea_halfsize[1], HalfZ = ObjArea_halfsize[2];
     const Double_t dX = 2*HalfX/NBin_X, dY = 2*HalfY/NBin_Y, dZ = 2*HalfZ/NBin_Z;
-    Int_t Ntrack[NBin_X][NBin_Y][NBin_Z];
-    Double_t Scatt_Density[NBin_X][NBin_Y][NBin_Z];
+    Int_t*** Ntrack = new Int_t**[NBin_X];
+    Double_t*** Scatt_Density = new Double_t**[NBin_X];
+    for(Int_t i = 0; i < NBin_X;i++){
+      Ntrack[i] = new Int_t*[NBin_Y];
+      Scatt_Density[i] = new Double_t*[NBin_Y];
+    }
+    for(Int_t i = 0; i < NBin_X; i++){
+       for(Int_t j = 0; j < NBin_Y; j++){
+         Ntrack[i][j] = new Int_t[NBin_Z];
+         Scatt_Density[i][j] = new Double_t[NBin_Z];
+       }
+    }
     for(Int_t i = 0; i < NBin_X; i++){
         for(Int_t j = 0; j < NBin_Y; j++){
             for(Int_t k = 0; k < NBin_Z; k++){
@@ -166,6 +176,7 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
                 if(Ntrack[nx][ny][nz] == 0) Scatt_Density[nx][ny][nz] = 0;
                 else{
                       Scatt_Density[nx][ny][nz] = Scatt_Density[nx][ny][nz]/Ntrack[nx][ny][nz];
+                      if(Scatt_Density[nx][ny][nz] > 100) Scatt_Density[nx][ny][nz] = 100;
                 }
                 h3->SetBinContent(nx+1,ny+1,nz+1,Scatt_Density[nx][ny][nz]);
                 result.fx = nx*dX-HalfX+dX/2;
@@ -190,20 +201,33 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
     gStyle->SetPalette(1);
     c->Divide(2,2);
     c->cd(1);
-    h3->Project3D("zy")->Draw();
-    c->cd(2);
-    h3->Project3D("zx")->SetStats(0);
     h3->Project3D("zx")->Draw();
+    h3->Project3D("zx")->SetStats(0);
+    c->cd(2);
+    h3->Project3D("zy")->SetStats(0);
+    h3->Project3D("zy")->Draw();
     c->cd(3);
     h3->Project3D("yx")->SetStats(0);
     h3->Project3D("yx")->Draw();
     c->cd(4);
     h3->Draw("glcolz");
     std::cout <<"done" << std::endl;
+    for(Int_t i = 0; i < NBin_X; i++){
+       for(Int_t j = 0; j < NBin_Y; j++){
+          delete[] Ntrack[i][j];
+          delete[] Scatt_Density[i][j];
+       }
+    }
+    for(Int_t i = 0;i<NBin_X;i++){
+      delete[] Ntrack[i];
+      delete[] Scatt_Density[i];
+    }
+    delete[] Ntrack;
+    delete[] Scatt_Density;
 }
 
 void PoCA(){
     const double ObjectArea_halfsize[3] = {Plate_Size_X/20,Plate_Size_Y/20,ObjectAreaWidth/20};
-    const Int_t NBins[3] = {40,40,40};
+    const Int_t NBins[3] = {100,100,100};
     Imag("../rawdata.root",ObjectArea_halfsize,NBins);
 }

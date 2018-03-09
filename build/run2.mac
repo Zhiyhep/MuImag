@@ -5,11 +5,12 @@
 #
 #/run/numberOfWorkers 4
 /run/initialize
+/run/verbose 2
+/tracking/verbose 5
 #
 # Default kinemtics: 
 # electron 50 MeV in direction (0.,0.,1.)
 # 1000 events
 #
-/run/printProgress 100
-/run/beamOn 1000
+/run/beamOn 3
 

@@ -201,6 +201,8 @@ G4VUserPhysicsList.hh
 /home/cihenp/g4proj/MuImag/src/G4VUserPhysicsList.hh
 G4ParticleTable.hh
 /home/cihenp/g4proj/MuImag/src/G4ParticleTable.hh
+G4ProductionCutsTable.hh
+/home/cihenp/g4proj/MuImag/src/G4ProductionCutsTable.hh
 G4ComptonScattering.hh
 /home/cihenp/g4proj/MuImag/src/G4ComptonScattering.hh
 G4GammaConversion.hh
@@ -315,6 +317,10 @@ G4String.hh
 /home/cihenp/g4proj/MuImag/src/G4String.hh
 G4ThreeVector.hh
 /home/cihenp/g4proj/MuImag/src/G4ThreeVector.hh
+G4VProcess.hh
+/home/cihenp/g4proj/MuImag/src/G4VProcess.hh
+iostream
+-
 
 /home/cihenp/g4proj/MuImag/src/PrimaryHits.cc
 PrimaryHits.hh

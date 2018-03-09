@@ -27,5 +27,8 @@ The analysis programs serve as a toolkit for inspecting events and analysis simu
 ![](/build/analysis/pics/Eve.png)
 
 ### PoCA Result
-#### PoCA Image with 10<sup>6</sup> events
-![PoCA Image with 10<sup>6</sup> events](/build/analysis/pics/PoCA_Imag.png)
+#### PoCA Image with 10<sup>6</sup> events and voxel size of 1.25 cm.
+![PoCA Image with 10<sup>6</sup> events](/build/analysis/pics/PoCA_Imag_Bin40_Pixel.png)
+
+### PoCA Image with 10<sup>6</sup> events and voxel size of 0.5 cm.
+![PoCA Image with 10<sup>6</sup> events](/build/analysis/pics/PoCA_Imag_Bin100.png)

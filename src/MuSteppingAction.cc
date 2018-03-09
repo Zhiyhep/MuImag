@@ -36,6 +36,8 @@
 #include "G4SystemOfUnits.hh"
 #include "G4String.hh"
 #include "G4ThreeVector.hh"
+#include "G4VProcess.hh"
+#include <iostream>
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 MuSteppingAction::MuSteppingAction(
@@ -71,6 +73,11 @@ void MuSteppingAction::UserSteppingAction(const G4Step* step)
   	fEventAction->fPosZ.push_back(pos.z()/cm);
         fEventAction->fDetName.push_back(physName);
   	fEventAction->fNhits++;
+        G4String Process = step->GetPostStepPoint()->GetProcessDefinedStep()->GetProcessName();
+        std::cout
+                 << "step" << fEventAction->fNhits 
+                 << " " << "in "<<logName
+	         << " ProcName is "<<Process << std::endl;
    }
   
 }

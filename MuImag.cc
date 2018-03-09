@@ -119,7 +119,7 @@ int main(int argc,char** argv)
   auto detConstruction = new MuDetectorConstruction("../src/Muon_Setup.gdml");
   runManager->SetUserInitialization(detConstruction);
 
-  runManager->SetUserInitialization(new FTFP_BERT);
+  runManager->SetUserInitialization(new MuPhysicsList);
     
   auto actionInitialization = new MuActionInitialization(output,detConstruction);
   runManager->SetUserInitialization(actionInitialization);

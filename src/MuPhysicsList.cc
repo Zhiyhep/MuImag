@@ -14,11 +14,12 @@
 #include "G4SystemOfUnits.hh"
 #include "G4VUserPhysicsList.hh"
 #include "G4ParticleTable.hh"
+#include "G4ProductionCutsTable.hh"
 
 MuPhysicsList::MuPhysicsList() :G4VUserPhysicsList()
 {
 	// TODO Auto-generated constructor stub
-	defaultCutValue = 1.*mm;
+	defaultCutValue = 0.1*mm;
 	SetVerboseLevel(1);
 }
 
@@ -134,7 +135,6 @@ void MuPhysicsList::ConstructEM(){
 	    G4ParticleDefinition* particle = theParticleIterator->value();
 	    G4ProcessManager* pmanager = particle->GetProcessManager();
 	    G4String particleName = particle->GetParticleName();
-            
 	    if (particleName == "gamma") {
 	      // gamma
 	      pmanager->AddDiscreteProcess(new G4PhotoElectricEffect);
@@ -171,7 +171,7 @@ void MuPhysicsList::ConstructEM(){
 	      pmanager->AddProcess(new G4hBremsstrahlung,     -1, -1, 3);
 	      pmanager->AddProcess(new G4hPairProduction,     -1, -1, 4);
 
-	    } /*else if( particleName == "alpha" ||
+	    } else if( particleName == "alpha" ||
 		       particleName == "He3" )     {
 	      //alpha
 	      pmanager->AddProcess(new G4hMultipleScattering, -1, 1, 1);
@@ -182,7 +182,7 @@ void MuPhysicsList::ConstructEM(){
 	      pmanager->AddProcess(new G4hMultipleScattering, -1, 1, 1);
 	      pmanager->AddProcess(new G4ionIonisation,       -1, 2, 2);
 
-	    }*/ else if ((!particle->IsShortLived()) &&
+	    } else if ((!particle->IsShortLived()) &&
 		       (particle->GetPDGCharge() != 0.0) &&
 		       (particle->GetParticleName() != "chargedgeantino")) {
 	      //all others charged particles except geantino
@@ -239,7 +239,7 @@ void MuPhysicsList::SetCuts() {
 	  //the default cut value for all particle types
 	  //
 	  SetCutsWithDefault();
-
+//        G4ProductionCutsTable::GetProductionCutsTable()->SetEnergyRange(1000.*eV,1e5);
 	  if (verboseLevel>0) DumpCutValuesTable();
 
 }

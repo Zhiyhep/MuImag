@@ -21,24 +21,17 @@
 # 3 events
 #
 /gun/particle mu+
-/gun/energy 3 MeV
 /run/beamOn 3
-#
-# 20 events
-#
-/tracking/verbose 0
-/run/printProgress 5
-/run/beamOn 20
 #
 # Magnetic field
 # 
-/globalField/setValue 0.2 0 0 tesla
-/run/beamOn 3
+#/globalField/setValue 0.2 0 0 tesla
+#/run/beamOn 3
 #
 # Activate/inactivate physics processes
 #
 /process/list
-/process/inactivate eBrem
+#/process/inactivate eBrem
 #
-/run/beamOn 20
+#/run/beamOn 20
 #
