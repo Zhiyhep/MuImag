@@ -89,5 +89,5 @@ void Plot_PoCA(TString geometry = "Geometry/Muon_Setup.root",
 }
 
 void PoCA_Points(){
-    Plot_PoCA("Geometry/Muon_Setup.root", "../rawdata.root");
+    Plot_PoCA("../../GDML/Overlap/Muon_Setup.root", "../rawdata.root");
 }

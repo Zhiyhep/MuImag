@@ -20,16 +20,23 @@
 #include "TMath.h"
 #include "TH3.h"
 #include "TF1.h"
+#include "TH2.h"
 #include "TStyle.h"
 #include "TList.h"
 #include "TCanvas.h"
+#include "TParameter.h"
+
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include <map>
+#include <vector>
+
 #include "DetectorLayout.hh"
+
 Double_t my_transfer_function(const Double_t *x, const Double_t*)
 {
-  if(*x < 5) return 0;
+  if(*x < 3) return 0;
   if(*x < 26.) return 0.1;
   if(*x < 78.) return 0.3; 
   return 0.6;
@@ -80,6 +87,59 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
             }
         }
     }
+    struct PoCA_Result{
+        //coordinates of voxel
+        double fx;
+        double fy;
+        double fz;
+        //reconstructed scatter density
+        double fs;
+        //number of tracks that passes the voxel
+        int ntrack;
+        //index of the voxel
+        int index;
+    };
+    // Infomation of each ray
+    struct Ray_Info{
+        Int_t NVoxel; // Number of voxels the ray passes
+        Int_t Index[200]; // The index of the transversed voxels
+        Double_t Length[200]; // The pass length of the transversed voxels
+        double Scatt_Ang_X2; // Square of scatter angle in x direction
+        double Scatt_Ang_Y2; // Square of scatter angle in y direction
+    };
+    // Information of each voxel
+    struct Voxel_Info{
+        Int_t Index; // Index of the voxel
+        Int_t NRay; // Number of rays that pass the voxel
+        Int_t Event_no[20000]; // The index of the rays that pass the voxel
+        double Length[20000]; // The pass length of the rays in the voxel
+    };
+    PoCA_Result result;
+    Ray_Info rinfo;
+    std::map<int, std::vector<int>> vox_index;
+    std::map<int, std::vector<double>> vox_length;
+    Voxel_Info v_info;
+    rinfo.NVoxel = NBin_Z;
+    //output file
+    TFile *fout = new TFile("PoCA_Result.root","recreate");
+    TTree *tout = new TTree("PoCA","Result of PoCA algorithm");
+    TTree *t_ray = new TTree("Ray_Info","Ray info for maximum likelihood"); 
+    TTree *t_voxel = new TTree("Voxel_Info","Voxel info for maximum likelihood");
+    tout->Branch("fx",&result.fx,"fx/D");
+    tout->Branch("fy",&result.fy,"fy/D");
+    tout->Branch("fz",&result.fz,"fz/D");
+    tout->Branch("fScatt_Density",&result.fs,"fScatt_Density/D");
+    tout->Branch("fNtrack",&result.ntrack,"fNtrack/I");
+    tout->Branch("fIndex",&result.index,"fIndex/I");
+    t_ray->Branch("fNVoxel",&rinfo.NVoxel,"fNVoxel/I");
+    t_ray->Branch("fIndex",rinfo.Index,"fIndex[fNVoxel]/I");
+    t_ray->Branch("fLength",rinfo.Length,"fLength[fNVoxel]/D");
+    t_ray->Branch("fScatt_Ang_X2",&rinfo.Scatt_Ang_X2,"fScatt_Ang_X2/D");
+    t_ray->Branch("fScatt_Ang_Y2",&rinfo.Scatt_Ang_Y2,"fScatt_Ang_Y2/D");
+    t_voxel->Branch("fIndex",&v_info.Index,"fIndex/I");
+    t_voxel->Branch("fNRay",&v_info.NRay,"fNRay/I");
+    t_voxel->Branch("fEventNo",&v_info.Event_no,"fEventNo[fNRay]/I");
+    t_voxel->Branch("fLength",&v_info.Length,"fLength[fNRay]/D");
     for(Int_t i = 0; i < nentry; i++){
         t->GetEntry(i);
         TVector3 Incident_Dir = (*pos2-*pos1).Unit();
@@ -93,36 +153,54 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
         TVector3 Pt = Scatter_Pt(*pos1,Incident_Dir,*pos3,Exit_Dir);
         std::cout<<i<<std::endl;
         std::cout<<"event number: "<<event_no<<std::endl;
+        rinfo.Scatt_Ang_X2 = TMath::Power(Exit_Ang_X-Incident_Ang_X,2)*1e6;
+        rinfo.Scatt_Ang_Y2 = TMath::Power(Exit_Ang_Y-Incident_Ang_Y,2)*1e6;
         //std::cout<<"Pt: ("<<Pt.x()<<", "<<Pt.y()<<", "<<Pt.z()<<")"<<std::endl;
         if(TMath::Abs(Pt.x())<=HalfX && TMath::Abs(Pt.y())<=HalfY && TMath::Abs(Pt.z())<=HalfZ){
             //Calculate scatter density [mrad^2/cm]
-            Double_t S = (TMath::Power(Exit_Ang_X-Incident_Ang_X,2)+TMath::Power(Exit_Ang_Y-Incident_Ang_Y,2))/dZ/2*TMath::Cos((Incident_Ang+Exit_Ang)/2)*1e6;
+            Double_t S = (rinfo.Scatt_Ang_X2+rinfo.Scatt_Ang_Y2)/dZ/2*TMath::Cos((Incident_Ang+Exit_Ang)/2);
             // Index of scatter point
             Int_t Pt_nx = TMath::Floor((Pt.x()+HalfX)/dX);
             Int_t Pt_ny = TMath::Floor((Pt.y()+HalfY)/dY);
             Int_t Pt_nz = TMath::Floor((Pt.z()+HalfZ)/dZ);
             Ntrack[Pt_nx][Pt_ny][Pt_nz]++;
             Scatt_Density[Pt_nx][Pt_ny][Pt_nz]+=S;
+            
             for(Int_t nz = 0; nz < Pt_nz; nz++){
                 // The line function: P = *pos3-L*Exit_Dir
                 Double_t L = ((*pos3).z() - ((nz+0.5)*dZ-HalfZ))/Exit_Dir.z();
+                rinfo.Length[nz] = -dZ/Exit_Dir.z();
                 // Interac point of exit ray and layer nz  
                 TVector3 P = *pos3 - L*Exit_Dir;
                 // Index of P
                 Int_t P_nx = TMath::Floor((P.x()+HalfX)/dX);
                 Int_t P_ny = TMath::Floor((P.y()+HalfY)/dY);
                // std::cout<<P_nx<<", "<<P_ny<<std::endl;
+                int vindex = P_nx+NBin_X*P_ny+NBin_X*NBin_Y*nz;
+                rinfo.Index[nz] = vindex;
+                vox_index[vindex].push_back(i);
+                vox_length[vindex].push_back(rinfo.Length[nz]);
                 Ntrack[P_nx][P_ny][nz]++;
             } 
+            rinfo.Length[Pt_nz]  = dZ/TMath::Cos((Incident_Ang+Exit_Ang)/2);
+            int vindex = Pt_nx+NBin_X*Pt_ny+NBin_X*NBin_Y*Pt_nz;
+            rinfo.Index[Pt_nz] = vindex;
+            vox_index[vindex].push_back(i);
+            vox_length[vindex].push_back(rinfo.Length[Pt_nz]);
             for(Int_t nz = Pt_nz+1; nz < NBin_Z; nz++){
                 // The line function: P = *pos2+L*Incident_Dir
                 Double_t L = (((nz+0.5)*dZ-HalfZ)-(*pos2).z())/Incident_Dir.z();
+                rinfo.Length[nz] = -dZ/Incident_Dir.z();
                 // Interac point of exit ray and layer nz  
                 TVector3 P = *pos2 + L*Incident_Dir;
                 // Index of P
                 Int_t P_nx = TMath::Floor((P.x()+HalfX)/dX);
                 Int_t P_ny = TMath::Floor((P.y()+HalfY)/dY);
                 //std::cout<<P_nx<<", "<<P_ny<<std::endl;
+                int vindex = P_nx+NBin_X*P_ny+NBin_X*NBin_Y*nz;
+                rinfo.Index[nz] = vindex;
+                vox_index[vindex].push_back(i);
+                vox_length[vindex].push_back(rinfo.Length[nz]);
                 Ntrack[P_nx][P_ny][nz]++;
             } 
         }
@@ -131,10 +209,20 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
             Mid_Dir = Mid_Dir.Unit();
             for(int nz = 0;nz < NBin_Z;nz++){
                 // The line function: P = *pos2+L*Incident_Dir
-                Double_t L = (((nz+0.5)*dZ-HalfZ)-(*pos2).z())/Incident_Dir.z();  
+                Double_t L = (((nz+0.5)*dZ-HalfZ)-(*pos2).z())/Incident_Dir.z(); 
+                rinfo.Length[nz] = dZ/TMath::Cos((Incident_Ang+Exit_Ang)/2); 
                 TVector3 P = *pos2 + L*Incident_Dir;
                 Int_t P_nx = TMath::Floor((P.x()+HalfX)/dX);
                 Int_t P_ny = TMath::Floor((P.y()+HalfY)/dY);
+                if(P_nx < 0) P_nx = 0;
+                else if(P_nx >= NBin_X) P_nx = NBin_X-1;
+                if(P_ny < 0) P_ny = 0;
+                else if(P_ny >= NBin_Y) P_ny = NBin_Y-1;
+                std::cout <<"nx, ny: "<< P.x() <<", "<<P.y()<<std::endl;
+                int vindex = P_nx+NBin_X*P_ny+NBin_X*NBin_Y*nz;
+                rinfo.Index[nz] = vindex;
+                vox_index[vindex].push_back(i);
+                vox_length[vindex].push_back(rinfo.Length[nz]);
                 Ntrack[P_nx][P_ny][nz]++;     
             }
             std::cout<<"Incident_Ang_X: "<<Incident_Ang_X*180/TMath::Pi()<<" degree"<<std::endl;
@@ -142,28 +230,13 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
             std::cout<<"Exit_Ang_X: "<<Exit_Ang_X*180/TMath::Pi()<<" degree"<<std::endl;
             std::cout<<"Exit_Ang_Y: "<<Exit_Ang_Y*180/TMath::Pi()<<" degree"<<std::endl;
         }
-
+        for(int i = 0; i < NBin_Z;i++) std::cout << rinfo.Length[i] << std::endl;
+        t_ray->Fill();
     }
     f->Close();
 
-    struct PoCA_Result{
-        //coordinates of voxel
-        double fx;
-        double fy;
-        double fz;
-        //reconstructed scatter density
-        double fs;
-        //number of tracks that passes the voxel
-        int ntrack;
-    };
-    PoCA_Result result;
-    //output file
-    TFile *fout = new TFile("PoCA_Result.root","recreate");
-    TTree *tout = new TTree("PoCA","Result of PoCA algorithm");
-    tout->Branch("Scatt_density",&result.fx,"fx/D:fy/D:fz/D:scatt_density/D:ntrack/I");
-
     // Renew scatter density matrix
-    TH3F *h3 = new TH3F("Muon Image","Muon Image",NBin_X,-HalfX, HalfX,NBin_Y,-HalfY,HalfY
+    TH3F *h3 = new TH3F("Muon Image","PoCA Image",NBin_X,-HalfX, HalfX,NBin_Y,-HalfY,HalfY
                ,NBin_Z,-HalfZ,HalfZ);
     /*
     TH2F *hyz = new TH3F("hyz","Muon Image (y-z)",NBin_Y,-HalfY,HalfY,NBin_Z,-HalfZ,HalfZ);
@@ -173,10 +246,11 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
     for(Int_t nx = 0; nx < NBin_X; nx++){
         for(Int_t ny = 0; ny < NBin_Y; ny++){
             for(Int_t nz = 0; nz < NBin_Z; nz++){
-                if(Ntrack[nx][ny][nz] == 0) Scatt_Density[nx][ny][nz] = 0;
+                if(Ntrack[nx][ny][nz] == 0) Scatt_Density[nx][ny][nz] = 2.3; // Air Scatter Density 
                 else{
                       Scatt_Density[nx][ny][nz] = Scatt_Density[nx][ny][nz]/Ntrack[nx][ny][nz];
-                      if(Scatt_Density[nx][ny][nz] > 100) Scatt_Density[nx][ny][nz] = 100;
+                      if(Scatt_Density[nx][ny][nz] > 200) Scatt_Density[nx][ny][nz] = 200;
+                      if(Scatt_Density[nx][ny][nz] < 2.3) Scatt_Density[nx][ny][nz] = 2.3;
                 }
                 h3->SetBinContent(nx+1,ny+1,nz+1,Scatt_Density[nx][ny][nz]);
                 result.fx = nx*dX-HalfX+dX/2;
@@ -184,12 +258,29 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
                 result.fz = nz*dZ-HalfZ+dZ/2;
                 result.fs = Scatt_Density[nx][ny][nz];
                 result.ntrack = Ntrack[nx][ny][nz];
+                result.index = nx+NBin_X*ny+NBin_X*NBin_Y*nz;
                 tout->Fill();
             }
         }
     }
+    int voxel_num = NBin_X*NBin_Y*NBin_Z;
+    for(int i=0; i < voxel_num; i++)
+    {
+      v_info.Index = i;
+      v_info.NRay = vox_index[i].size();
+      for(int j=0; j < v_info.NRay; j++) 
+      {
+        v_info.Event_no[j] = vox_index[i][j];
+        v_info.Length[j] = vox_length[i][j];
+      }
+      t_voxel->Fill();
+    }
     tout->Print();
+    t_ray->Print();
+    t_voxel->Print();
     tout->Write();
+    t_ray->Write();
+    t_voxel->Write();
     // Plot scatter density
     gStyle->SetCanvasPreferGL(1);
     TCanvas *c = new TCanvas("glc","MuImag",0,0,HalfX*40,HalfZ*40);
@@ -201,8 +292,9 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
     gStyle->SetPalette(1);
     c->Divide(2,2);
     c->cd(1);
-    h3->Project3D("zx")->Draw();
-    h3->Project3D("zx")->SetStats(0);
+    TH2F *h_zx = (TH2F*) h3->Project3D("zx");
+    h_zx->SetStats(0);
+    h_zx->Draw();
     c->cd(2);
     h3->Project3D("zy")->SetStats(0);
     h3->Project3D("zy")->Draw();
@@ -224,10 +316,24 @@ void Imag(TString filename, const Double_t (&ObjArea_halfsize)[3], const Int_t (
     }
     delete[] Ntrack;
     delete[] Scatt_Density;
+    
+    // Save useful parameters
+    TParameter<int> NBin_X_par("NBin_X",NBin_X);
+    TParameter<int> NBin_Y_par("NBin_Y",NBin_Y);
+    TParameter<int> NBin_Z_par("NBin_Z",NBin_Z);
+    fout->WriteTObject(&NBin_X_par,NBin_X_par.GetName());
+    fout->WriteTObject(&NBin_Y_par,NBin_Y_par.GetName());
+    fout->WriteTObject(&NBin_Z_par,NBin_Z_par.GetName());
 }
 
 void PoCA(){
     const double ObjectArea_halfsize[3] = {Plate_Size_X/20,Plate_Size_Y/20,ObjectAreaWidth/20};
-    const Int_t NBins[3] = {100,100,100};
+    const Int_t NBins[3] = {20,20,20};
     Imag("../rawdata.root",ObjectArea_halfsize,NBins);
+}
+ 
+int main()
+{
+  PoCA();
+  return 0;
 }

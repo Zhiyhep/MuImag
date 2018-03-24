@@ -1,0 +1,155 @@
+<define>
+    <position name="UpPlate_Offset" z="(Chamber_Size_Z-Plate_Size_Z)/2"/>
+    <position name="DownPlate_Offset" z="(Plate_Size_Z-Chamber_Size_Z)/2"/>
+    <position name="Up1_Position" unit="mm" x="0" y="0" z="(ObjectAreaWidth*0.5+Detector_Size_Z*1.5+Detector_Offset)"/>
+    <position name="Up2_Position" unit="mm" x="0" y="0" z="(ObjectAreaWidth*0.5+Detector_Size_Z*0.5)"/>
+    <position name="Down1_Position" unit="mm" x="0" y="0" z="-(ObjectAreaWidth*0.5+Detector_Size_Z*0.5)"/>
+    <position name="Down2_Position" unit="mm" x="0" y="0" z="-(ObjectAreaWidth*0.5+Detector_Size_Z*1.5+Detector_Offset)"/>
+</define>
+<solids>
+    <box name="WorldSolid" x="World_Size_X" y="World_Size_Y" z="World_Size_Z" lunit="mm" />
+    <box name="DetectorSolid" x="Detector_Size_X" y="Detector_Size_Y" z="Detector_Size_Z" lunit="mm" />
+    <box name="ChamberSolid" x="Chamber_Size_X" y="Chamber_Size_Y" z="Chamber_Size_Z" lunit="mm" />
+    <box name="PlateSolid" x="Plate_Size_X" y="Plate_Size_Y" z="Plate_Size_Z" lunit="mm" /> 
+    <box name="CopperBoxSolid" x="CopperBox_X" y="CopperBox_Y" z="CopperBox_Z" lunit="mm"/>
+    <box name="LeadBoxSolid" x="LeadBox_X" y="LeadBox_Y" z="LeadBox_Z" lunit="mm" /> 
+    <box name="UBoxSolid" x="UBox_X" y="UBox_Y" z="UBox_Z" lunit="mm" />
+    <subtraction name="DetectorBoxSolid">
+        <first ref="DetectorSolid"/>
+        <second ref="ChamberSolid"/>
+        <position name="center" unit="mm" x="0" y="0" z="0" />
+    </subtraction>
+    <subtraction name="ChamberSolid_1">
+        <first ref="ChamberSolid"/>
+        <second ref="PlateSolid"/>
+        <positionref ref="UpPlate_Offset"/>
+    </subtraction>
+    <subtraction name="GasSolid">
+        <first ref="ChamberSolid_1"/>
+        <second ref="PlateSolid"/>
+        <positionref ref="DownPlate_Offset"/>
+    </subtraction>
+</solids>
+
+<structure>
+
+    <!-- {{{ Volumes definition (material and solid assignment) -->
+    <volume name="plateVolume">
+        <materialref ref="Kapton"/>
+        <solidref ref="PlateSolid"/>
+    </volume>
+
+    <volume name="gasVolume">
+        <materialref ref="Ar_CO2"/>
+        <solidref ref="GasSolid"/>
+    </volume>
+
+    <volume name="DetectorBoxVolume">
+        <materialref ref="Kapton"/>
+        <solidref ref="DetectorBoxSolid"/>
+     </volume>
+     
+     <volume name="CopperBox">
+        <materialref ref="Copper"/>
+        <solidref ref="CopperBoxSolid"/>
+     </volume>
+     <volume name="LeadBox">
+        <materialref ref="Lead"/>
+        <solidref ref="LeadBoxSolid"/>
+     </volume>
+     <volume name="UBox">
+        <materialref ref="Uranium"/>
+        <solidref ref="UBoxSolid"/>
+     </volume>
+    <!-- }}} -->
+
+    <!-- {{{ Physical volume definition (volume and position assignment) -->
+    <volume name="World">
+        <materialref ref="Air"/>
+        <solidref ref="WorldSolid"/>
+
+        <physvol name="Up_Detector1">
+            <volumeref ref="DetectorBoxVolume"/>
+            <positionref ref="Up1_Position"/>
+        </physvol>
+        <physvol name="Up1_UpPlate">
+            <volumeref ref="plateVolume"/>
+            <position name="platepos1" z="ObjectAreaWidth*0.5+Detector_Size_Z*1.5+Detector_Offset+Chamber_Size_Z*0.5-Plate_Size_Z*0.5"/>
+        </physvol>
+        <physvol name="Up1_DownPlate">
+            <volumeref ref="plateVolume"/>
+            <position name="platepos2" z="ObjectAreaWidth*0.5+Detector_Size_Z*1.5+Detector_Offset-Chamber_Size_Z*0.5+Plate_Size_Z*0.5"/>
+        </physvol>
+        
+        <physvol name="Up_Detector2">
+            <volumeref ref="DetectorBoxVolume"/>
+            <positionref ref="Up2_Position"/>
+        </physvol>
+        <physvol name="Up2_UpPlate">
+            <volumeref ref="plateVolume"/>
+            <position name="platepos3" z="ObjectAreaWidth*0.5+Detector_Size_Z*0.5+Chamber_Size_Z*0.5-Plate_Size_Z*0.5"/>
+        </physvol>
+        <physvol name="Up2_DownPlate">
+            <volumeref ref="plateVolume"/>
+            <position name="platepos4" z="ObjectAreaWidth*0.5+Detector_Size_Z*0.5-Chamber_Size_Z*0.5+Plate_Size_Z*0.5"/>
+        </physvol>
+
+        <physvol name="Down_Detector1">
+            <volumeref ref="DetectorBoxVolume"/>
+            <positionref ref="Down1_Position"/>
+        </physvol>
+        <physvol name="Down1_UpPlate">
+            <volumeref ref="plateVolume"/>
+            <position name="platepos5" z="-(ObjectAreaWidth*0.5+Detector_Size_Z*0.5-Chamber_Size_Z*0.5+Plate_Size_Z*0.5)"/>
+        </physvol>
+        <physvol name="Down1_DownPlate">
+            <volumeref ref="plateVolume"/>
+            <position name="platepos6" z="-(ObjectAreaWidth*0.5+Detector_Size_Z*0.5+Chamber_Size_Z*0.5-Plate_Size_Z*0.5)"/>
+        </physvol>
+
+        <physvol name="Down_Detector2">
+            <volumeref ref="DetectorBoxVolume"/>
+            <positionref ref="Down2_Position"/>
+        </physvol>
+        <physvol name="Down2_UpPlate">
+            <volumeref ref="plateVolume"/>
+            <position name="platepos7" z="-(ObjectAreaWidth*0.5+Detector_Size_Z*1.5+Detector_Offset-Chamber_Size_Z*0.5+Plate_Size_Z*0.5)"/>
+        </physvol>
+        <physvol name="Down2_DownPlate">
+            <volumeref ref="plateVolume"/>
+            <position name="platepos8" z="-(ObjectAreaWidth*0.5+Detector_Size_Z*1.5+Detector_Offset+Chamber_Size_Z*0.5-Plate_Size_Z*0.5)"/>
+        </physvol>
+
+        <physvol name="gas">
+            <volumeref ref="gasVolume"/>
+            <positionref ref="Up1_Position"/>
+        </physvol>
+        <physvol name="gas2">
+            <volumeref ref="gasVolume"/>
+            <positionref ref="Up2_Position"/>
+        </physvol>
+        <physvol name="gas3">
+            <volumeref ref="gasVolume"/>
+            <positionref ref="Down1_Position"/>
+        </physvol>
+        <physvol name="gas4">
+            <volumeref ref="gasVolume"/>
+            <positionref ref="Down2_Position"/>
+        </physvol>
+
+        <physvol name="copper_box">
+            <volumeref ref="CopperBox"/>
+            <position name="CopperBoxPosition" unit="mm" x="Target1_Pos_X" y="Target1_Pos_Y" z="Target1_Pos_Z"/>
+        </physvol>
+        <physvol name="lead_box">
+            <volumeref ref="LeadBox"/>
+            <position name="LeadBoxPosition" unit="mm" x="Target2_Pos_X" y="Target2_Pos_Y" z="Target2_Pos_Z"/>
+        </physvol>
+        <physvol name="uranium_box">
+            <volumeref ref="UBox"/>
+            <position name="UBoxPosition" unit="mm" x="Target3_Pos_X" y="Target3_Pos_Y" z="Target3_Pos_Z"/>
+        </physvol>
+    </volume>
+    <!-- }}} -->
+
+</structure>

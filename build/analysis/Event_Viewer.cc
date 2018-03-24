@@ -30,7 +30,7 @@
 using namespace std;
 
 MultiView* gMultiView = 0;
-void Event_Viewer(int event_no = 1, TString geometry = "Geometry/Muon_Setup.root",
+void Event_Viewer(int event_no = 1, TString geometry = "../../GDML/Overlap/Muon_Setup.root",
                   TString datafile = "../rawdata.root")
 {
     R__LOAD_LIBRARY(../../lib/libPrimaryHits.so)

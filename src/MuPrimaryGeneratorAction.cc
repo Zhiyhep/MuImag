@@ -42,6 +42,7 @@
 #include "G4ThreeVector.hh"
 #include "TMath.h"
 #include "TRandom3.h"
+#include <iostream>
 TRandom3 my_rand(0);
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -52,7 +53,7 @@ MuPrimaryGeneratorAction::MuPrimaryGeneratorAction(MuDetectorConstruction *det)
  fParticleGun = new G4ParticleGun();
  G4double X_Width = fDetectorConstruction->fHalf_Size_X/10;// [cm]
  G4double Y_Width = fDetectorConstruction->fHalf_Size_Y/10;// [cm]
- fTau = 60./(X_Width*Y_Width)*s;// [s] 
+ fTau = 60./(X_Width*Y_Width);// [s] 
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

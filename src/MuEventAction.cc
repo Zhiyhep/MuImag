@@ -36,6 +36,7 @@
 
 #include "Randomize.hh"
 #include <iomanip>
+#include <iostream>
 #include "G4SystemOfUnits.hh"
 #include "MuDetectorConstruction.hh"
 #include <vector>
@@ -80,7 +81,12 @@ void MuEventAction::EndOfEventAction(const G4Event* event)
   ParticleGunDirection = ParticleGunDirection.unit();
   G4double PrimaryEnergy = gpParticle->GetKineticEnergy();
   G4ThreeVector ParticleGunPosition = gpVertex->GetPosition();
-  G4double t0 = gpVertex->GetT0(); // Time point of primary particle generation
+  G4double t0 = gpVertex->GetT0();
+  std::cout << t0 << std::endl;
+  for(int i=0; i<fNhits;i++)
+  {
+    fTime[i]+=t0;
+  }
   if(fNhits > 0){  
   	fRunAction->phit->fParticleGunPosition.SetXYZ(ParticleGunPosition.x()/cm,ParticleGunPosition.y()/cm,ParticleGunPosition.z()/cm);
   	fRunAction->phit->fParticleGunDirection.SetXYZ(ParticleGunDirection.x(),ParticleGunDirection.y(),ParticleGunDirection.z());
@@ -91,7 +97,7 @@ void MuEventAction::EndOfEventAction(const G4Event* event)
   	fRunAction->phit->fPosX.assign(fPosX.begin(), fPosX.end());
   	fRunAction->phit->fPosY.assign(fPosY.begin(), fPosY.end());
   	fRunAction->phit->fPosZ.assign(fPosZ.begin(), fPosZ.end());
-    fRunAction->phit->fDetName.assign(fDetName.begin(),fDetName.end());
+        fRunAction->phit->fDetName.assign(fDetName.begin(),fDetName.end());
   	fRunAction->tree->Fill();
    }
   // Print per event (modulo n)

@@ -22,8 +22,8 @@ endif()
 # Add external libraries
 #
 #link_libraries("/home/cihenp/g4proj/MuImag/include/libPrimaryHits.so")
-include_directories("/home/cihenp/g4proj/MuImag/include")
-set(PrimaryHits_LIBRARIES "/home/cihenp/g4proj/MuImag/lib/libPrimaryHits.so")
+include_directories(${CMAKE_SOURCE_DIR}/include)
+set(PrimaryHits_LIBRARIES ${CMAKE_SOURCE_DIR}/lib/libPrimaryHits.so)
 #----------------------------------------------------------------------------
 # Setup Geant4 include directories and compile definitions
 # Setup include directory for this project
