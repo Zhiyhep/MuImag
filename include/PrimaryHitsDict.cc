@@ -56,7 +56,7 @@ namespace ROOT {
       ::PrimaryHits *ptr = 0;
       static ::TVirtualIsAProxy* isa_proxy = new ::TIsAProxy(typeid(::PrimaryHits));
       static ::ROOT::TGenericClassInfo 
-         instance("PrimaryHits", "PrimaryHits.hh", 19,
+         instance("PrimaryHits", "PrimaryHits.hh", 20,
                   typeid(::PrimaryHits), ::ROOT::Internal::DefineBehavior(ptr, ptr),
                   &PrimaryHits_Dictionary, isa_proxy, 4,
                   sizeof(::PrimaryHits) );
@@ -240,8 +240,8 @@ namespace {
 0
     };
     static const char* includePaths[] = {
-"/my_cache/ROOT6.10.02/include",
-"/home/cihenp/g4proj/MuImag/include/",
+"/my_cache/ROOT6.10.08/install/include",
+"/home/zhiyu/proj/MuImag/include/",
 0
     };
     static const char* fwdDeclCode = R"DICTFWDDCLS(

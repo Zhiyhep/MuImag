@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/cihenp/g4proj/MuImag/MuImag.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/MuImag.cc.o"
-  "/home/cihenp/g4proj/MuImag/src/MuActionInitialization.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o"
-  "/home/cihenp/g4proj/MuImag/src/MuDetectorConstruction.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o"
-  "/home/cihenp/g4proj/MuImag/src/MuEventAction.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuEventAction.cc.o"
-  "/home/cihenp/g4proj/MuImag/src/MuPhysicsList.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o"
-  "/home/cihenp/g4proj/MuImag/src/MuPrimaryGeneratorAction.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o"
-  "/home/cihenp/g4proj/MuImag/src/MuRunAction.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuRunAction.cc.o"
-  "/home/cihenp/g4proj/MuImag/src/MuSteppingAction.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o"
-  "/home/cihenp/g4proj/MuImag/src/PrimaryHits.cc" "/home/cihenp/g4proj/MuImag/build/CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o"
+  "/home/zhiyu/proj/MuImag/MuImag.cc" "/home/zhiyu/proj/MuImag/build/CMakeFiles/MuImag.dir/MuImag.cc.o"
+  "/home/zhiyu/proj/MuImag/src/MuActionInitialization.cc" "/home/zhiyu/proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o"
+  "/home/zhiyu/proj/MuImag/src/MuDetectorConstruction.cc" "/home/zhiyu/proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o"
+  "/home/zhiyu/proj/MuImag/src/MuEventAction.cc" "/home/zhiyu/proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuEventAction.cc.o"
+  "/home/zhiyu/proj/MuImag/src/MuPhysicsList.cc" "/home/zhiyu/proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o"
+  "/home/zhiyu/proj/MuImag/src/MuPrimaryGeneratorAction.cc" "/home/zhiyu/proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o"
+  "/home/zhiyu/proj/MuImag/src/MuRunAction.cc" "/home/zhiyu/proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuRunAction.cc.o"
+  "/home/zhiyu/proj/MuImag/src/MuSteppingAction.cc" "/home/zhiyu/proj/MuImag/build/CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o"
+  "/home/zhiyu/proj/MuImag/src/PrimaryHits.cc" "/home/zhiyu/proj/MuImag/build/CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -32,14 +32,16 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
-  "/home/cihenp/geant/geant4_10_02_p02-install/include/Geant4"
+  "/my_cache/Geant4.10.04/install/include/Geant4"
   "/usr/include/qt4"
   "/usr/include/qt4/QtCore"
   "/usr/include/qt4/QtGui"
   "/usr/include/qt4/QtOpenGL"
-  "/my_cache/ROOT6.10.02/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

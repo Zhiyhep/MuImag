@@ -8,8 +8,20 @@ void PrimaryHits::Clean(){
     fPosY.clear();
     fPosZ.clear();
     fEdep.clear();
+    fEkin.clear();
     fTime.clear();
     fDetName.clear();
+}
+
+TVector3 PrimaryHits::GetIncidentDirInVolume(TString volName){
+    for(int i=0; i<fNhits; i++){
+        if(volName == fDetName[i]){
+		TVector3 pos(fDirX[i],fDirY[i],fDirZ[i]);
+		return pos.Unit();
+	}
+    }
+    TVector3 pos(0,0,0);
+    return pos;
 }
 
 Double_t PrimaryHits::GetDepositEnergyInVolume(TString volName){

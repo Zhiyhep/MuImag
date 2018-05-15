@@ -60,10 +60,14 @@ void MuEventAction::BeginOfEventAction(const G4Event* event)
 {  
   cout << "Begin of Event " << event->GetEventID() << endl;
   fEdep.clear();
+  fEkin.clear();
   fTime.clear();
   fPosX.clear();
   fPosY.clear();
   fPosZ.clear();
+  fDirX.clear();
+  fDirY.clear();
+  fDirZ.clear();
   fDetName.clear();
   fNhits = 0;
 }
@@ -93,11 +97,17 @@ void MuEventAction::EndOfEventAction(const G4Event* event)
   	fRunAction->phit->fPrimaryEnergy = PrimaryEnergy/GeV;
   	fRunAction->phit->fNhits = fNhits;
   	fRunAction->phit->fEdep.assign(fEdep.begin(), fEdep.end());
+	fRunAction->phit->fEkin.assign(fEkin.begin(), fEkin.end());
   	fRunAction->phit->fTime.assign(fTime.begin(), fTime.end());
   	fRunAction->phit->fPosX.assign(fPosX.begin(), fPosX.end());
   	fRunAction->phit->fPosY.assign(fPosY.begin(), fPosY.end());
   	fRunAction->phit->fPosZ.assign(fPosZ.begin(), fPosZ.end());
-        fRunAction->phit->fDetName.assign(fDetName.begin(),fDetName.end());
+	fRunAction->phit->fDirX.assign(fDirX.begin(), fDirX.end());
+	fRunAction->phit->fDirY.assign(fDirY.begin(), fDirY.end());
+	fRunAction->phit->fDirZ.assign(fDirZ.begin(), fDirZ.end());
+	for(int i = 0; i < fNhits; i++){
+		fRunAction->phit->fDetName.push_back(fDetName[i].data());
+	}
   	fRunAction->tree->Fill();
    }
   // Print per event (modulo n)

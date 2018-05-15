@@ -64,13 +64,20 @@ void MuSteppingAction::UserSteppingAction(const G4Step* step)
   if(logName == "gasVolume" && (particleName == "mu+" || particleName == "mu-")){
         
   	G4double edep = step->GetTotalEnergyDeposit();
+	G4double ekin = track->GetKineticEnergy();
   	G4double gtime = track->GetGlobalTime(); // Just fly time here
   	G4ThreeVector pos = track->GetPosition();
+	G4ThreeVector dir = track->GetMomentumDirection();
+	dir =  dir.unit();
   	fEventAction->fEdep.push_back(edep/keV);
+	fEventAction->fEkin.push_back(ekin/MeV);
   	fEventAction->fTime.push_back(gtime/s);
   	fEventAction->fPosX.push_back(pos.x()/cm);
   	fEventAction->fPosY.push_back(pos.y()/cm);
   	fEventAction->fPosZ.push_back(pos.z()/cm);
+	fEventAction->fDirX.push_back(dir.x());
+	fEventAction->fDirY.push_back(dir.y());
+	fEventAction->fDirZ.push_back(dir.z());
         fEventAction->fDetName.push_back(physName);
   	fEventAction->fNhits++;
         G4String Process = step->GetPostStepPoint()->GetProcessDefinedStep()->GetProcessName();

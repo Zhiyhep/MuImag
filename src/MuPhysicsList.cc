@@ -128,7 +128,7 @@ void MuPhysicsList::ConstructProcess(){
 #include "G4ionIonisation.hh"
 
 void MuPhysicsList::ConstructEM(){
-        //theParticleIterator = GetParticleIterator();
+        auto theParticleIterator = GetParticleIterator();
 	theParticleIterator->reset();
         G4cout<<"ConstructEM"<<G4endl;
 	  while( (*theParticleIterator)() ){
@@ -197,6 +197,7 @@ void MuPhysicsList::ConstructEM(){
 void MuPhysicsList::ConstructGeneral(){
 	  // Add Decay Process
 	  G4Decay* theDecayProcess = new G4Decay();
+          auto theParticleIterator = GetParticleIterator();
 	  theParticleIterator->reset();
 	  while( (*theParticleIterator)() ){
 	    G4ParticleDefinition* particle = theParticleIterator->value();
@@ -219,7 +220,7 @@ void MuPhysicsList::AddStepMax() {
 	  // Step limitation seen as a process
 	  G4StepLimiter* stepLimiter = new G4StepLimiter();
 	  ////G4UserSpecialCuts* userCuts = new G4UserSpecialCuts();
-
+          auto theParticleIterator = GetParticleIterator();
 	  theParticleIterator->reset();
 	  while ((*theParticleIterator)()){
 	      G4ParticleDefinition* particle = theParticleIterator->value();

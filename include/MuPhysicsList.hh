@@ -63,7 +63,7 @@ protected:
 
   G4int 	verboseLevel;
   G4String 	namePhysics;
-  G4ParticleTable * 	theParticleTable;
+  //G4ParticleTable * 	theParticleTable;
   //G4ParticleTable::G4PTblDicIterator * 	theParticleIterator;
 };
 

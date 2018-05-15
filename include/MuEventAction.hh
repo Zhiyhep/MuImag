@@ -45,10 +45,14 @@ class MuEventAction : public G4UserEventAction
     virtual void    EndOfEventAction(const G4Event* event);
     
     std::vector<G4double> fEdep;
+    std::vector<G4double> fEkin;
     std::vector<G4double> fTime;
     std::vector<G4double> fPosX;
     std::vector<G4double> fPosY; 
     std::vector<G4double> fPosZ;
+    std::vector<G4double> fDirX;
+    std::vector<G4double> fDirY;
+    std::vector<G4double> fDirZ;
     std::vector<G4String> fDetName;
     G4int fNhits;
   private:

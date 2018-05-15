@@ -2,7 +2,8 @@
 // Writer: Zhi Yu
 // Date: 2018/1/26
 // Data Member: -> fEdep: deposit energy (keV) of each step
-//              -> fTime: global fly time of each time
+//              -> fEkin: kinetic energy (MeV) at each step 
+//              -> fTime: global fly time at each step
 //              -> fPosX, fPosY, fPosZ: position of each step
 //              -> fDetName: detector name of each step
 //              -> fNhits: total number of hits
@@ -22,10 +23,14 @@ class PrimaryHits{
         virtual ~PrimaryHits();     
     // Member Data     
         std::vector<Double_t> fEdep;
+	std::vector<Double_t> fEkin;
         std::vector<Double_t> fTime;
         std::vector<Double_t> fPosX;
         std::vector<Double_t> fPosY;
         std::vector<Double_t> fPosZ;
+	std::vector<Double_t> fDirX;
+	std::vector<Double_t> fDirY;
+	std::vector<Double_t> fDirZ;
         std::vector<TString> fDetName;
         Int_t fNhits;
         TVector3 fParticleGunPosition;
@@ -33,6 +38,8 @@ class PrimaryHits{
         Double_t fPrimaryEnergy;
 
     // Member Function
+        // Get incident direction in each volume
+	TVector3 GetIncidentDirInVolume(TString volName);
         // Get deposit energy in certain volume
         Double_t GetDepositEnergyInVolume(TString volName);
         // Get number of hits in certain volume
