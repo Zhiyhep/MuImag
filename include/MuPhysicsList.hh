@@ -34,33 +34,27 @@
 #ifndef SOURCE_DIRECTORY__SRC_MUONPHYSICSLIST_HH_
 #define SOURCE_DIRECTORY__SRC_MUONPHYSICSLIST_HH_
 
-#include "G4VUserPhysicsList.hh"
+#include "G4VModularPhysicsList.hh"
 #include "globals.hh"
 
+class G4VPhysicsConstructor;
+class MuDetectorConstruction;
 
-class MuPhysicsList :public G4VUserPhysicsList {
+class MuPhysicsList :public G4VModularPhysicsList {
 public:
 	MuPhysicsList();
 	virtual ~MuPhysicsList();
 
-protected:
-	void ConstructParticle();
-	void ConstructProcess();
-	void SetCuts();
+	virtual void ConstructParticle();
+	virtual void SetCuts();
 
-protected:
-  // these methods Construct particles
-  void ConstructBosons();
-  void ConstructLeptons();
-  void ConstructMesons();
-  void ConstructBaryons();
+	virtual void ConstructProcess();
 
-protected:
-// these methods Construct physics processes and register them
-  void ConstructGeneral();
-  void ConstructEM();
-  void AddStepMax();
+	//void AddStepMax();
+private:
 
+  G4VPhysicsConstructor* fEmPhysicsList;
+  G4VPhysicsConstructor* fDecayPhysicsList;
   G4int 	verboseLevel;
   G4String 	namePhysics;
   //G4ParticleTable * 	theParticleTable;

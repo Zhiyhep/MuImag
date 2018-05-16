@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+
+  <define/>
+
+  <materials>
+    <isotope N="1" Z="1" name="H1">
+      <atom unit="g/mole" value="1.00782503081372"/>
+    </isotope>
+    <isotope N="2" Z="1" name="H2">
+      <atom unit="g/mole" value="2.01410199966617"/>
+    </isotope>
+    <element name="Hydrogen">
+      <fraction n="0.999885" ref="H1"/>
+      <fraction n="0.000115" ref="H2"/>
+    </element>
+    <isotope N="12" Z="6" name="C12">
+      <atom unit="g/mole" value="12"/>
+    </isotope>
+    <isotope N="13" Z="6" name="C13">
+      <atom unit="g/mole" value="13.0034"/>
+    </isotope>
+    <element name="Carbon">
+      <fraction n="0.9893" ref="C12"/>
+      <fraction n="0.0107" ref="C13"/>
+    </element>
+    <isotope N="14" Z="7" name="N14">
+      <atom unit="g/mole" value="14.0031"/>
+    </isotope>
+    <isotope N="15" Z="7" name="N15">
+      <atom unit="g/mole" value="15.0001"/>
+    </isotope>
+    <element name="Nitrogen">
+      <fraction n="0.99632" ref="N14"/>
+      <fraction n="0.00368" ref="N15"/>
+    </element>
+    <isotope N="16" Z="8" name="O16">
+      <atom unit="g/mole" value="15.9949"/>
+    </isotope>
+    <isotope N="17" Z="8" name="O17">
+      <atom unit="g/mole" value="16.9991"/>
+    </isotope>
+    <isotope N="18" Z="8" name="O18">
+      <atom unit="g/mole" value="17.9992"/>
+    </isotope>
+    <element name="Oxygen">
+      <fraction n="0.99757" ref="O16"/>
+      <fraction n="0.00038" ref="O17"/>
+      <fraction n="0.00205" ref="O18"/>
+    </element>
+    <material name="Kapton" state="solid">
+      <MEE unit="eV" value="79.6"/>
+      <D unit="g/cm3" value="1.42"/>
+      <fraction n="0.026362" ref="Hydrogen"/>
+      <fraction n="0.691133" ref="Carbon"/>
+      <fraction n="0.07327" ref="Nitrogen"/>
+      <fraction n="0.209235" ref="Oxygen"/>
+    </material>
+    <isotope N="36" Z="18" name="Ar36">
+      <atom unit="g/mole" value="35.9675"/>
+    </isotope>
+    <isotope N="38" Z="18" name="Ar38">
+      <atom unit="g/mole" value="37.9627"/>
+    </isotope>
+    <isotope N="40" Z="18" name="Ar40">
+      <atom unit="g/mole" value="39.9624"/>
+    </isotope>
+    <element name="Argon">
+      <fraction n="0.003365" ref="Ar36"/>
+      <fraction n="0.000632" ref="Ar38"/>
+      <fraction n="0.996003" ref="Ar40"/>
+    </element>
+    <material name="Ar_CO2" state="gas">
+      <T unit="K" value="293.2"/>
+      <P unit="pascal" value="100000"/>
+      <MEE unit="eV" value="148.780830617034"/>
+      <D unit="g/cm3" value="0.00169"/>
+      <fraction n="0.7" ref="Argon"/>
+      <fraction n="0.0818734948174799" ref="Carbon"/>
+      <fraction n="0.21812650518252" ref="Oxygen"/>
+    </material>
+    <isotope N="55" Z="25" name="Mn55">
+      <atom unit="g/mole" value="54.938"/>
+    </isotope>
+    <element name="Manganese">
+      <fraction n="1" ref="Mn55"/>
+    </element>
+    <isotope N="28" Z="14" name="Si28">
+      <atom unit="g/mole" value="27.9769"/>
+    </isotope>
+    <isotope N="29" Z="14" name="Si29">
+      <atom unit="g/mole" value="28.9765"/>
+    </isotope>
+    <isotope N="30" Z="14" name="Si30">
+      <atom unit="g/mole" value="29.9738"/>
+    </isotope>
+    <element name="Silicon">
+      <fraction n="0.922296077703922" ref="Si28"/>
+      <fraction n="0.0468319531680468" ref="Si29"/>
+      <fraction n="0.0308719691280309" ref="Si30"/>
+    </element>
+    <isotope N="50" Z="24" name="Cr50">
+      <atom unit="g/mole" value="49.946"/>
+    </isotope>
+    <isotope N="52" Z="24" name="Cr52">
+      <atom unit="g/mole" value="51.9405"/>
+    </isotope>
+    <isotope N="53" Z="24" name="Cr53">
+      <atom unit="g/mole" value="52.9407"/>
+    </isotope>
+    <isotope N="54" Z="24" name="Cr54">
+      <atom unit="g/mole" value="53.9389"/>
+    </isotope>
+    <element name="Chromium">
+      <fraction n="0.04345" ref="Cr50"/>
+      <fraction n="0.83789" ref="Cr52"/>
+      <fraction n="0.09501" ref="Cr53"/>
+      <fraction n="0.02365" ref="Cr54"/>
+    </element>
+    <isotope N="58" Z="28" name="Ni58">
+      <atom unit="g/mole" value="57.9353"/>
+    </isotope>
+    <isotope N="60" Z="28" name="Ni60">
+      <atom unit="g/mole" value="59.9308"/>
+    </isotope>
+    <isotope N="61" Z="28" name="Ni61">
+      <atom unit="g/mole" value="60.9311"/>
+    </isotope>
+    <isotope N="62" Z="28" name="Ni62">
+      <atom unit="g/mole" value="61.9283"/>
+    </isotope>
+    <isotope N="64" Z="28" name="Ni64">
+      <atom unit="g/mole" value="63.928"/>
+    </isotope>
+    <element name="Nickel">
+      <fraction n="0.680769" ref="Ni58"/>
+      <fraction n="0.262231" ref="Ni60"/>
+      <fraction n="0.011399" ref="Ni61"/>
+      <fraction n="0.036345" ref="Ni62"/>
+      <fraction n="0.009256" ref="Ni64"/>
+    </element>
+    <isotope N="54" Z="26" name="Fe54">
+      <atom unit="g/mole" value="53.9396"/>
+    </isotope>
+    <isotope N="56" Z="26" name="Fe56">
+      <atom unit="g/mole" value="55.9349"/>
+    </isotope>
+    <isotope N="57" Z="26" name="Fe57">
+      <atom unit="g/mole" value="56.9354"/>
+    </isotope>
+    <isotope N="58" Z="26" name="Fe58">
+      <atom unit="g/mole" value="57.9333"/>
+    </isotope>
+    <element name="Iron">
+      <fraction n="0.05845" ref="Fe54"/>
+      <fraction n="0.91754" ref="Fe56"/>
+      <fraction n="0.02119" ref="Fe57"/>
+      <fraction n="0.00282" ref="Fe58"/>
+    </element>
+    <material name="Stainlesssteel" state="solid">
+      <MEE unit="eV" value="280.927567486627"/>
+      <D unit="g/cm3" value="8.02"/>
+      <fraction n="0.02" ref="Manganese"/>
+      <fraction n="0.01" ref="Silicon"/>
+      <fraction n="0.19" ref="Chromium"/>
+      <fraction n="0.1" ref="Nickel"/>
+      <fraction n="0.68" ref="Iron"/>
+    </material>
+    <isotope N="235" Z="92" name="U235">
+      <atom unit="g/mole" value="235.01"/>
+    </isotope>
+    <isotope N="238" Z="92" name="U238">
+      <atom unit="g/mole" value="238.03"/>
+    </isotope>
+    <element name="enriched_Uranium">
+      <fraction n="0.9" ref="U235"/>
+      <fraction n="0.1" ref="U238"/>
+    </element>
+    <material name="Uranium" state="solid">
+      <MEE unit="eV" value="890"/>
+      <D unit="g/cm3" value="18.95"/>
+      <fraction n="1" ref="enriched_Uranium"/>
+    </material>
+    <material name="Air" state="gas">
+      <T unit="K" value="293.13"/>
+      <MEE unit="eV" value="85.7030667332999"/>
+      <D unit="g/cm3" value="0.00129"/>
+      <fraction n="0.7" ref="Nitrogen"/>
+      <fraction n="0.3" ref="Oxygen"/>
+    </material>
+  </materials>
+
+  <solids>
+    <box lunit="mm" name="DetectorSolid" x="1040" y="1040" z="30"/>
+    <box lunit="mm" name="ChamberSolid" x="1020" y="1020" z="15"/>
+    <subtraction name="DetectorBoxSolid">
+      <first ref="DetectorSolid"/>
+      <second ref="ChamberSolid"/>
+    </subtraction>
+    <box lunit="mm" name="PlateSolid" x="1000" y="1000" z="2.5"/>
+    <subtraction name="ChamberSolid_1">
+      <first ref="ChamberSolid"/>
+      <second ref="PlateSolid"/>
+      <position name="ChamberSolid_1_pos" unit="mm" x="0" y="0" z="6.25"/>
+    </subtraction>
+    <subtraction name="GasSolid">
+      <first ref="ChamberSolid_1"/>
+      <second ref="PlateSolid"/>
+      <position name="GasSolid_pos" unit="mm" x="0" y="0" z="-6.25"/>
+    </subtraction>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="TubeSolid" rmax="50" rmin="0" startphi="0" z="100"/>
+    <box lunit="mm" name="WorldSolid" x="2000" y="2000" z="2000"/>
+  </solids>
+
+  <structure>
+    <volume name="DetectorBoxVolume">
+      <materialref ref="Kapton"/>
+      <solidref ref="DetectorBoxSolid"/>
+    </volume>
+    <volume name="plateVolume">
+      <materialref ref="Kapton"/>
+      <solidref ref="PlateSolid"/>
+    </volume>
+    <volume name="gasVolume">
+      <materialref ref="Ar_CO2"/>
+      <solidref ref="GasSolid"/>
+    </volume>
+    <volume name="Stain_Tube">
+      <materialref ref="Stainlesssteel"/>
+      <solidref ref="TubeSolid"/>
+    </volume>
+    <volume name="U_Tube">
+      <materialref ref="Uranium"/>
+      <solidref ref="TubeSolid"/>
+    </volume>
+    <volume name="World">
+      <materialref ref="Air"/>
+      <solidref ref="WorldSolid"/>
+      <physvol name="Up_Detector1">
+        <volumeref ref="DetectorBoxVolume"/>
+        <position name="Up_Detector1_pos" unit="mm" x="0" y="0" z="645"/>
+      </physvol>
+      <physvol name="Up1_UpPlate">
+        <volumeref ref="plateVolume"/>
+        <position name="Up1_UpPlate_pos" unit="mm" x="0" y="0" z="651.25"/>
+      </physvol>
+      <physvol name="Up1_DownPlate">
+        <volumeref ref="plateVolume"/>
+        <position name="Up1_DownPlate_pos" unit="mm" x="0" y="0" z="638.75"/>
+      </physvol>
+      <physvol name="Up_Detector2">
+        <volumeref ref="DetectorBoxVolume"/>
+        <position name="Up_Detector2_pos" unit="mm" x="0" y="0" z="515"/>
+      </physvol>
+      <physvol name="Up2_UpPlate">
+        <volumeref ref="plateVolume"/>
+        <position name="Up2_UpPlate_pos" unit="mm" x="0" y="0" z="521.25"/>
+      </physvol>
+      <physvol name="Up2_DownPlate">
+        <volumeref ref="plateVolume"/>
+        <position name="Up2_DownPlate_pos" unit="mm" x="0" y="0" z="508.75"/>
+      </physvol>
+      <physvol name="Down_Detector1">
+        <volumeref ref="DetectorBoxVolume"/>
+        <position name="Down_Detector1_pos" unit="mm" x="0" y="0" z="-515"/>
+      </physvol>
+      <physvol name="Down1_UpPlate">
+        <volumeref ref="plateVolume"/>
+        <position name="Down1_UpPlate_pos" unit="mm" x="0" y="0" z="-508.75"/>
+      </physvol>
+      <physvol name="Down1_DownPlate">
+        <volumeref ref="plateVolume"/>
+        <position name="Down1_DownPlate_pos" unit="mm" x="0" y="0" z="-521.25"/>
+      </physvol>
+      <physvol name="Down_Detector2">
+        <volumeref ref="DetectorBoxVolume"/>
+        <position name="Down_Detector2_pos" unit="mm" x="0" y="0" z="-645"/>
+      </physvol>
+      <physvol name="Down2_UpPlate">
+        <volumeref ref="plateVolume"/>
+        <position name="Down2_UpPlate_pos" unit="mm" x="0" y="0" z="-638.75"/>
+      </physvol>
+      <physvol name="Down2_DownPlate">
+        <volumeref ref="plateVolume"/>
+        <position name="Down2_DownPlate_pos" unit="mm" x="0" y="0" z="-651.25"/>
+      </physvol>
+      <physvol name="gas">
+        <volumeref ref="gasVolume"/>
+        <position name="gas_pos" unit="mm" x="0" y="0" z="645"/>
+      </physvol>
+      <physvol name="gas2">
+        <volumeref ref="gasVolume"/>
+        <position name="gas2_pos" unit="mm" x="0" y="0" z="515"/>
+      </physvol>
+      <physvol name="gas3">
+        <volumeref ref="gasVolume"/>
+        <position name="gas3_pos" unit="mm" x="0" y="0" z="-515"/>
+      </physvol>
+      <physvol name="gas4">
+        <volumeref ref="gasVolume"/>
+        <position name="gas4_pos" unit="mm" x="0" y="0" z="-645"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="-333.333333333333" y="-333.333333333333" z="333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="-333.333333333333" y="-333.333333333333" z="-333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="-333.333333333333" y="0" z="333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="-333.333333333333" y="0" z="-333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="-333.333333333333" y="333.333333333333" z="333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="-333.333333333333" y="333.333333333333" z="-333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="0" y="-333.333333333333" z="333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="0" y="-333.333333333333" z="-333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="0" y="0" z="333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="0" y="0" z="-333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="0" y="333.333333333333" z="333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="0" y="333.333333333333" z="-333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="333.333333333333" y="-333.333333333333" z="333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="333.333333333333" y="-333.333333333333" z="-333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="333.333333333333" y="0" z="333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="333.333333333333" y="0" z="-333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="333.333333333333" y="333.333333333333" z="333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="333.333333333333" y="333.333333333333" z="-333.333333333333"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="-333.333333333333" y="-333.333333333333" z="0"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="-333.333333333333" y="333.333333333333" z="0"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="0" y="-333.333333333333" z="0"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="0" y="333.333333333333" z="0"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="333.333333333333" y="-333.333333333333" z="0"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="333.333333333333" y="333.333333333333" z="0"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="-333.333333333333" y="0" z="0"/>
+      </physvol>
+      <physvol name="Stain_Tube_PV">
+        <volumeref ref="Stain_Tube"/>
+        <position name="Stain_Tube_PV_pos" unit="mm" x="333.333333333333" y="0" z="0"/>
+      </physvol>
+      <physvol name="U_Tube_PV">
+        <volumeref ref="U_Tube"/>
+      </physvol>
+    </volume>
+  </structure>
+
+  <setup name="Default" version="1.0">
+    <world ref="World"/>
+  </setup>
+
+</gdml>
