@@ -4,6 +4,11 @@
 # Setup the project
 #
 cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
+set(CMAKE_CXX_COMPILER "g++")
+set(CMAKE_C_COMPILER "gcc")
+set(CMAKE_CXX_FLAGS "-std=c++11")
+set(CMAKE_C_FLAGS "-std=c++11")
+
 project(MuImag)
 
 #----------------------------------------------------------------------------
@@ -19,35 +24,38 @@ else()
 endif()
 
 #----------------------------------------------------------------------------
-# Add external libraries
-#
-#link_libraries("/home/cihenp/g4proj/MuImag/include/libPrimaryHits.so")
-include_directories(${CMAKE_SOURCE_DIR}/include)
-set(PrimaryHits_LIBRARIES ${CMAKE_SOURCE_DIR}/lib/libPrimaryHits.so)
-#----------------------------------------------------------------------------
 # Setup Geant4 include directories and compile definitions
 # Setup include directory for this project
 #
 include(${Geant4_USE_FILE})
 include_directories(${PROJECT_SOURCE_DIR}/include ${Geant4_INCLUDE_DIR})
+find_package(ROOT)
+include(${ROOT_USE_FILE})
+include_directories(${ROOT_INCLUDE_DIR})
 
+#----------------------------------------------------------------------------
+# Add external libraries
+#
+include_directories(${CMAKE_SOURCE_DIR}/include)
+link_directories(${CMAKE_SOURCE_DIR}/lib)
+
+include_directories($ENV{GARFIELD_HOME}/Include)
+link_directories($ENV{GARFIELD_HOME}/Library)
 #----------------------------------------------------------------------------
 # Locate sources and headers for this project
 # NB: headers are included so they will show up in IDEs
 #
 file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc)
 file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
-
-find_package(ROOT)
-include_directories(${ROOT_INCLUDE_DIR})
+file(GLOB headers $ENV{GARFIELD_HOME}/Include/*.hh)
 
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 libraries
 #
 add_executable(MuImag MuImag.cc ${sources} ${headers})
 target_link_libraries(MuImag ${Geant4_LIBRARIES})
+target_link_libraries(MuImag -lMuonEvent -lGarfield -lgfortran -lGeom -lGdml)
 target_link_libraries(MuImag ${ROOT_LIBRARIES})
-target_link_libraries(MuImag ${PrimaryHits_LIBRARIES})
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory, i.e. the directory in which we
 # build B4a. This is so that we can run the executable directly because it
@@ -56,6 +64,7 @@ target_link_libraries(MuImag ${PrimaryHits_LIBRARIES})
 set(MuImag_SCRIPTS
   MuImag.out
   MuImag.in
+  icons.mac
   gui.mac
   init_vis.mac
   run1.mac

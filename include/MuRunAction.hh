@@ -32,10 +32,10 @@
 #include "globals.hh"
 #include "TFile.h"
 #include "TTree.h"
+#include "MuonEvent.hh"
 
 class G4Run;
 class MuDetectorConstruction;
-class PrimaryHits;
 
 /// Run action class
 ///
@@ -58,16 +58,15 @@ class PrimaryHits;
 class MuRunAction : public G4UserRunAction
 {
   public:
-    MuRunAction(G4String name, const MuDetectorConstruction*);
+    MuRunAction(G4String name, MuDetectorConstruction*);
     virtual ~MuRunAction();
 
     virtual void BeginOfRunAction(const G4Run*);
     virtual void   EndOfRunAction(const G4Run*);
     TFile *file;
     TTree *tree;
-    PrimaryHits* phit;
   private:
-    const MuDetectorConstruction* fDetConstruction;
+    MuDetectorConstruction* fDetConstruction;
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

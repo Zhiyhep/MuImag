@@ -29,8 +29,8 @@
 #include "MuPrimaryGeneratorAction.hh"
 #include "MuRunAction.hh"
 #include "MuEventAction.hh"
-#include "MuSteppingAction.hh"
 #include "MuDetectorConstruction.hh"
+#include <iostream>
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -60,13 +60,11 @@ void MuActionInitialization::BuildForMaster() const
 void MuActionInitialization::Build() const
 {
   SetUserAction(new MuPrimaryGeneratorAction(fDetConstruction));
-
   MuRunAction *runAction = new MuRunAction(fGdml, fDetConstruction);
   SetUserAction(runAction);
 
   MuEventAction *eventAction = new MuEventAction(fDetConstruction, runAction);
   SetUserAction(eventAction);
-  SetUserAction(new MuSteppingAction(fDetConstruction, eventAction));
 }  
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

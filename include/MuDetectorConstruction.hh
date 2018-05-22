@@ -33,9 +33,12 @@
 #include "G4SystemOfUnits.hh"
 #include "G4GDMLParser.hh"
 #include "G4String.hh"
+#include "G4UserLimits.hh"
 
 class G4VPhysicalVolume;
+class G4VLogicalVolume;
 class G4GlobalMagFieldMessenger;
+class GarfieldG4FastSimulationModel;
 
 class MuDetectorConstruction : public G4VUserDetectorConstruction
 {
@@ -46,9 +49,15 @@ class MuDetectorConstruction : public G4VUserDetectorConstruction
   public:
     virtual G4VPhysicalVolume* Construct();
     virtual void ConstructSDandField();
-    G4double fHalf_Size_X;
+    // Half size of object Area
+    G4double fHalf_Size_X; // [mm]
     G4double fHalf_Size_Y;
     G4double fHalf_Size_Z;
+
+    // Half size of detector
+    G4double fDet_Half_Z;
+
+    GarfieldG4FastSimulationModel* fGarfieldG4FastSimulationModel;
 
   private:
   
@@ -58,7 +67,8 @@ class MuDetectorConstruction : public G4VUserDetectorConstruction
                                       // magnetic field messenger
     G4String fGdml;
     G4GDMLParser* fParser; 
-    G4bool  fCheckOverlaps; // option to activate checking of volumes overlaps
+    G4UserLimits* fStepLimit;
+    G4bool fCheckOverlaps;
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

@@ -24,9 +24,6 @@ CMAKE_BUILD_TYPE:STRING=Release
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
-//CXX compiler
-CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
-
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
 CMAKE_CXX_COMPILER_AR:FILEPATH=/usr/bin/gcc-ar-7
@@ -50,9 +47,6 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the compiler during release builds with debug info.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
-
-//C compiler
-CMAKE_C_COMPILER:FILEPATH=/usr/bin/cc
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -191,97 +185,97 @@ MuImag_BINARY_DIR:STATIC=/home/zhiyu/proj/MuImag/build
 MuImag_SOURCE_DIR:STATIC=/home/zhiyu/proj/MuImag
 
 //Path to a library.
-ROOT_Core_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libCore.so
+ROOT_Core_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libCore.so
 
 //The directory containing a CMake configuration file for ROOT.
-ROOT_DIR:PATH=/my_cache/ROOT6.10.08/install/cmake
+ROOT_DIR:PATH=/my_cache/ROOT6.12.06/build
 
 //Path to a library.
-ROOT_Gpad_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libGpad.so
+ROOT_Gpad_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libGpad.so
 
 //Path to a library.
-ROOT_Graf3d_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libGraf3d.so
+ROOT_Graf3d_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libGraf3d.so
 
 //Path to a library.
-ROOT_Graf_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libGraf.so
+ROOT_Graf_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libGraf.so
 
 //Path to a library.
-ROOT_Hist_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libHist.so
+ROOT_Hist_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libHist.so
 
 //Path to a library.
-ROOT_Imt_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libImt.so
+ROOT_Imt_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libImt.so
 
 //Path to a library.
-ROOT_MathCore_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libMathCore.so
+ROOT_MathCore_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libMathCore.so
 
 //Path to a library.
-ROOT_Matrix_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libMatrix.so
+ROOT_Matrix_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libMatrix.so
 
 //Path to a library.
-ROOT_MultiProc_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libMultiProc.so
+ROOT_MultiProc_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libMultiProc.so
 
 //Path to a library.
-ROOT_Net_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libNet.so
+ROOT_Net_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libNet.so
 
 //Path to a library.
-ROOT_Physics_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libPhysics.so
+ROOT_Physics_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libPhysics.so
 
 //Path to a library.
-ROOT_Postscript_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libPostscript.so
+ROOT_Postscript_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libPostscript.so
 
 //Path to a library.
-ROOT_RIO_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libRIO.so
+ROOT_RIO_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libRIO.so
 
 //Path to a library.
-ROOT_Rint_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libRint.so
+ROOT_Rint_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libRint.so
 
 //Path to a library.
-ROOT_Thread_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libThread.so
+ROOT_Thread_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libThread.so
 
 //Path to a library.
-ROOT_TreePlayer_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libTreePlayer.so
+ROOT_TreePlayer_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libTreePlayer.so
 
 //Path to a library.
-ROOT_Tree_LIBRARY:FILEPATH=/my_cache/ROOT6.10.08/install/lib/libTree.so
+ROOT_Tree_LIBRARY:FILEPATH=/my_cache/ROOT6.12.06/build/lib/libTree.so
 
 //Path to a program.
 ROOT_genmap_CMD:FILEPATH=ROOT_genmap_CMD-NOTFOUND
 
 //Path to a program.
-ROOT_genreflex_CMD:FILEPATH=/my_cache/ROOT6.10.08/install/bin/genreflex
+ROOT_genreflex_CMD:FILEPATH=/my_cache/ROOT6.12.06/build/bin/genreflex
 
 //Path to a program.
-ROOT_hadd_CMD:FILEPATH=/my_cache/ROOT6.10.08/install/bin/hadd
+ROOT_hadd_CMD:FILEPATH=/my_cache/ROOT6.12.06/build/bin/hadd
 
 //Path to a program.
-ROOT_root_CMD:FILEPATH=/my_cache/ROOT6.10.08/install/bin/root
+ROOT_root_CMD:FILEPATH=/my_cache/ROOT6.12.06/build/bin/root
 
 //Path to a program.
-ROOT_rootbrowse_CMD:FILEPATH=/my_cache/ROOT6.10.08/install/bin/rootbrowse
+ROOT_rootbrowse_CMD:FILEPATH=/my_cache/ROOT6.12.06/build/bin/rootbrowse
 
 //Path to a program.
-ROOT_rootcint_CMD:FILEPATH=/my_cache/ROOT6.10.08/install/bin/rootcint
+ROOT_rootcint_CMD:FILEPATH=/my_cache/ROOT6.12.06/build/bin/rootcint
 
 //Path to a program.
-ROOT_rootcling_CMD:FILEPATH=/my_cache/ROOT6.10.08/install/bin/rootcling
+ROOT_rootcling_CMD:FILEPATH=/my_cache/ROOT6.12.06/build/bin/rootcling
 
 //Path to a program.
-ROOT_rootcp_CMD:FILEPATH=/my_cache/ROOT6.10.08/install/bin/rootcp
+ROOT_rootcp_CMD:FILEPATH=/my_cache/ROOT6.12.06/build/bin/rootcp
 
 //Path to a program.
 ROOT_rootdraw_CMD:FILEPATH=ROOT_rootdraw_CMD-NOTFOUND
 
 //Path to a program.
-ROOT_rootls_CMD:FILEPATH=/my_cache/ROOT6.10.08/install/bin/rootls
+ROOT_rootls_CMD:FILEPATH=/my_cache/ROOT6.12.06/build/bin/rootls
 
 //Path to a program.
-ROOT_rootmkdir_CMD:FILEPATH=/my_cache/ROOT6.10.08/install/bin/rootmkdir
+ROOT_rootmkdir_CMD:FILEPATH=/my_cache/ROOT6.12.06/build/bin/rootmkdir
 
 //Path to a program.
-ROOT_rootmv_CMD:FILEPATH=/my_cache/ROOT6.10.08/install/bin/rootmv
+ROOT_rootmv_CMD:FILEPATH=/my_cache/ROOT6.12.06/build/bin/rootmv
 
 //Path to a program.
-ROOT_rootrm_CMD:FILEPATH=/my_cache/ROOT6.10.08/install/bin/rootrm
+ROOT_rootrm_CMD:FILEPATH=/my_cache/ROOT6.12.06/build/bin/rootrm
 
 //Build example with Geant4 UI and Vis drivers
 WITH_GEANT4_UIVIS:BOOL=ON
@@ -309,8 +303,6 @@ CMAKE_COMMAND:INTERNAL=/usr/bin/cmake
 CMAKE_CPACK_COMMAND:INTERNAL=/usr/bin/cpack
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=/usr/bin/ctest
-//ADVANCED property for variable: CMAKE_CXX_COMPILER
-CMAKE_CXX_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_COMPILER_AR
 CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_COMPILER_RANLIB
@@ -325,8 +317,6 @@ CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_RELWITHDEBINFO
 CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_C_COMPILER
-CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_AR
 CMAKE_C_COMPILER_AR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_RANLIB
@@ -341,6 +331,8 @@ CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
 CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//Path to cache edit program executable.
+CMAKE_EDIT_COMMAND:INTERNAL=/usr/bin/ccmake
 //Executable file format
 CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS

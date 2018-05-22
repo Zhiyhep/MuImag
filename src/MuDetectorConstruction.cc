@@ -26,6 +26,7 @@
 //Detector construction for muon imaging simulation
 
 #include "MuDetectorConstruction.hh"
+#include "GarfieldG4FastSimulationModel.hh"
 
 #include "G4Material.hh"
 #include "G4NistManager.hh"
@@ -48,6 +49,8 @@
 #include "G4PhysicalConstants.hh"
 #include "G4SystemOfUnits.hh"
 
+#include "G4Region.hh"
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 G4ThreadLocal 
@@ -62,9 +65,14 @@ MuDetectorConstruction::MuDetectorConstruction(G4String gdml)
   fGdml = gdml;
   fParser = new G4GDMLParser();
   fParser->Read(fGdml, false);
-  fHalf_Size_X = fParser->GetConstant("Plate_Size_X")/2;
-  fHalf_Size_Y = fParser->GetConstant("Plate_Size_Y")/2;
-  fHalf_Size_Z = fParser->GetConstant("ObjectAreaWidth")*0.5+fParser->GetConstant("Detector_Size_Z")*2+fParser->GetConstant("Detector_Offset");
+  fHalf_Size_X = fParser->GetConstant("Plate_Size_X")/2*CLHEP::mm;
+  fHalf_Size_Y = fParser->GetConstant("Plate_Size_Y")/2*CLHEP::mm;
+  fHalf_Size_Z = (fParser->GetConstant("ObjectAreaWidth")*0.5+fParser->GetConstant("Detector_Size_Z")*2+fParser->GetConstant("Detector_Offset"))*CLHEP::mm;
+  fDet_Half_Z = (fParser->GetConstant("Chamber_Size_Z")/2-fParser->GetConstant("Plate_Size_Z"))*CLHEP::mm;
+  G4LogicalVolume* gasVolume = fParser->GetVolume("gasVolume");
+  G4Region* regionGarfield = new G4Region("RegionGarfield");
+  regionGarfield->AddRootLogicalVolume(gasVolume);
+  fGarfieldG4FastSimulationModel = new GarfieldG4FastSimulationModel("GarfieldG4FastSimulationModel", regionGarfield, this);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

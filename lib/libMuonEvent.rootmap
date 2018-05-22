@@ -1,0 +1,11 @@
+{ decls }
+namespace std {  }
+
+[ libMuonEvent.so ]
+# List of selected classes
+class Cluster
+class MuonEvent
+class vector<Cluster>
+class vector<Electron>
+header Cluster.hh
+header MuonEvent.hh

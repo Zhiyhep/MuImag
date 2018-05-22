@@ -1,5 +1,6 @@
-#ifdef __MAKECINT__
-#pragma link C++ class std::vector<double>+;
-#pragma link C++ class std::vector<TString>+;
-#pragma link C++ class PrimaryHits+;
+#ifdef __CLING__
+#pragma link C++ class std::vector<Electron>+;
+#pragma link C++ class Cluster+;
+#pragma link C++ class std::vector<Cluster>+;
+#pragma link C++ class MuonEvent+;
 #endif

@@ -42,11 +42,11 @@ class MuActionInitialization : public G4VUserActionInitialization
     MuActionInitialization(G4String gdml, MuDetectorConstruction*);
     virtual ~MuActionInitialization();
 
-    virtual void BuildForMaster() const;
-    virtual void Build() const;
+    virtual void BuildForMaster() const; 
+    virtual void Build() const; 
 
   private:
-    MuDetectorConstruction* fDetConstruction;
+     MuDetectorConstruction* fDetConstruction;
     G4String fGdml;
 };
 

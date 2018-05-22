@@ -60,15 +60,15 @@ include CMakeFiles/MuImag.dir/flags.make
 CMakeFiles/MuImag.dir/MuImag.cc.o: CMakeFiles/MuImag.dir/flags.make
 CMakeFiles/MuImag.dir/MuImag.cc.o: ../MuImag.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MuImag.dir/MuImag.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/MuImag.cc.o -c /home/zhiyu/proj/MuImag/MuImag.cc
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/MuImag.cc.o -c /home/zhiyu/proj/MuImag/MuImag.cc
 
 CMakeFiles/MuImag.dir/MuImag.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MuImag.dir/MuImag.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/MuImag.cc > CMakeFiles/MuImag.dir/MuImag.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/MuImag.cc > CMakeFiles/MuImag.dir/MuImag.cc.i
 
 CMakeFiles/MuImag.dir/MuImag.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MuImag.dir/MuImag.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/MuImag.cc -o CMakeFiles/MuImag.dir/MuImag.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/MuImag.cc -o CMakeFiles/MuImag.dir/MuImag.cc.s
 
 CMakeFiles/MuImag.dir/MuImag.cc.o.requires:
 
@@ -81,18 +81,66 @@ CMakeFiles/MuImag.dir/MuImag.cc.o.provides: CMakeFiles/MuImag.dir/MuImag.cc.o.re
 CMakeFiles/MuImag.dir/MuImag.cc.o.provides.build: CMakeFiles/MuImag.dir/MuImag.cc.o
 
 
+CMakeFiles/MuImag.dir/src/Cluster.cc.o: CMakeFiles/MuImag.dir/flags.make
+CMakeFiles/MuImag.dir/src/Cluster.cc.o: ../src/Cluster.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MuImag.dir/src/Cluster.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/Cluster.cc.o -c /home/zhiyu/proj/MuImag/src/Cluster.cc
+
+CMakeFiles/MuImag.dir/src/Cluster.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MuImag.dir/src/Cluster.cc.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/Cluster.cc > CMakeFiles/MuImag.dir/src/Cluster.cc.i
+
+CMakeFiles/MuImag.dir/src/Cluster.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MuImag.dir/src/Cluster.cc.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/Cluster.cc -o CMakeFiles/MuImag.dir/src/Cluster.cc.s
+
+CMakeFiles/MuImag.dir/src/Cluster.cc.o.requires:
+
+.PHONY : CMakeFiles/MuImag.dir/src/Cluster.cc.o.requires
+
+CMakeFiles/MuImag.dir/src/Cluster.cc.o.provides: CMakeFiles/MuImag.dir/src/Cluster.cc.o.requires
+	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/Cluster.cc.o.provides.build
+.PHONY : CMakeFiles/MuImag.dir/src/Cluster.cc.o.provides
+
+CMakeFiles/MuImag.dir/src/Cluster.cc.o.provides.build: CMakeFiles/MuImag.dir/src/Cluster.cc.o
+
+
+CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o: CMakeFiles/MuImag.dir/flags.make
+CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o: ../src/GarfieldG4FastSimulationModel.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o -c /home/zhiyu/proj/MuImag/src/GarfieldG4FastSimulationModel.cc
+
+CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/GarfieldG4FastSimulationModel.cc > CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.i
+
+CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/GarfieldG4FastSimulationModel.cc -o CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.s
+
+CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o.requires:
+
+.PHONY : CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o.requires
+
+CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o.provides: CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o.requires
+	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o.provides.build
+.PHONY : CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o.provides
+
+CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o.provides.build: CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o
+
+
 CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o: CMakeFiles/MuImag.dir/flags.make
 CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o: ../src/MuActionInitialization.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o -c /home/zhiyu/proj/MuImag/src/MuActionInitialization.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o -c /home/zhiyu/proj/MuImag/src/MuActionInitialization.cc
 
 CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/MuActionInitialization.cc > CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/MuActionInitialization.cc > CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.i
 
 CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/MuActionInitialization.cc -o CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/MuActionInitialization.cc -o CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.s
 
 CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o.requires:
 
@@ -107,16 +155,16 @@ CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o.provides.build: CMakeFiles
 
 CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o: CMakeFiles/MuImag.dir/flags.make
 CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o: ../src/MuDetectorConstruction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o -c /home/zhiyu/proj/MuImag/src/MuDetectorConstruction.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o -c /home/zhiyu/proj/MuImag/src/MuDetectorConstruction.cc
 
 CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/MuDetectorConstruction.cc > CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/MuDetectorConstruction.cc > CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.i
 
 CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/MuDetectorConstruction.cc -o CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/MuDetectorConstruction.cc -o CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.s
 
 CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o.requires:
 
@@ -131,16 +179,16 @@ CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o.provides.build: CMakeFiles
 
 CMakeFiles/MuImag.dir/src/MuEventAction.cc.o: CMakeFiles/MuImag.dir/flags.make
 CMakeFiles/MuImag.dir/src/MuEventAction.cc.o: ../src/MuEventAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MuImag.dir/src/MuEventAction.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuEventAction.cc.o -c /home/zhiyu/proj/MuImag/src/MuEventAction.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MuImag.dir/src/MuEventAction.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuEventAction.cc.o -c /home/zhiyu/proj/MuImag/src/MuEventAction.cc
 
 CMakeFiles/MuImag.dir/src/MuEventAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MuImag.dir/src/MuEventAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/MuEventAction.cc > CMakeFiles/MuImag.dir/src/MuEventAction.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/MuEventAction.cc > CMakeFiles/MuImag.dir/src/MuEventAction.cc.i
 
 CMakeFiles/MuImag.dir/src/MuEventAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MuImag.dir/src/MuEventAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/MuEventAction.cc -o CMakeFiles/MuImag.dir/src/MuEventAction.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/MuEventAction.cc -o CMakeFiles/MuImag.dir/src/MuEventAction.cc.s
 
 CMakeFiles/MuImag.dir/src/MuEventAction.cc.o.requires:
 
@@ -155,16 +203,16 @@ CMakeFiles/MuImag.dir/src/MuEventAction.cc.o.provides.build: CMakeFiles/MuImag.d
 
 CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o: CMakeFiles/MuImag.dir/flags.make
 CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o: ../src/MuPhysicsList.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o -c /home/zhiyu/proj/MuImag/src/MuPhysicsList.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o -c /home/zhiyu/proj/MuImag/src/MuPhysicsList.cc
 
 CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/MuPhysicsList.cc > CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/MuPhysicsList.cc > CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.i
 
 CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/MuPhysicsList.cc -o CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/MuPhysicsList.cc -o CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.s
 
 CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o.requires:
 
@@ -179,16 +227,16 @@ CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o.provides.build: CMakeFiles/MuImag.d
 
 CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o: CMakeFiles/MuImag.dir/flags.make
 CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o: ../src/MuPrimaryGeneratorAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o -c /home/zhiyu/proj/MuImag/src/MuPrimaryGeneratorAction.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o -c /home/zhiyu/proj/MuImag/src/MuPrimaryGeneratorAction.cc
 
 CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/MuPrimaryGeneratorAction.cc > CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/MuPrimaryGeneratorAction.cc > CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.i
 
 CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/MuPrimaryGeneratorAction.cc -o CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/MuPrimaryGeneratorAction.cc -o CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.s
 
 CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o.requires:
 
@@ -203,16 +251,16 @@ CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o.provides.build: CMakeFil
 
 CMakeFiles/MuImag.dir/src/MuRunAction.cc.o: CMakeFiles/MuImag.dir/flags.make
 CMakeFiles/MuImag.dir/src/MuRunAction.cc.o: ../src/MuRunAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MuImag.dir/src/MuRunAction.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuRunAction.cc.o -c /home/zhiyu/proj/MuImag/src/MuRunAction.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/MuImag.dir/src/MuRunAction.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuRunAction.cc.o -c /home/zhiyu/proj/MuImag/src/MuRunAction.cc
 
 CMakeFiles/MuImag.dir/src/MuRunAction.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MuImag.dir/src/MuRunAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/MuRunAction.cc > CMakeFiles/MuImag.dir/src/MuRunAction.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/MuRunAction.cc > CMakeFiles/MuImag.dir/src/MuRunAction.cc.i
 
 CMakeFiles/MuImag.dir/src/MuRunAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MuImag.dir/src/MuRunAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/MuRunAction.cc -o CMakeFiles/MuImag.dir/src/MuRunAction.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/MuRunAction.cc -o CMakeFiles/MuImag.dir/src/MuRunAction.cc.s
 
 CMakeFiles/MuImag.dir/src/MuRunAction.cc.o.requires:
 
@@ -225,78 +273,56 @@ CMakeFiles/MuImag.dir/src/MuRunAction.cc.o.provides: CMakeFiles/MuImag.dir/src/M
 CMakeFiles/MuImag.dir/src/MuRunAction.cc.o.provides.build: CMakeFiles/MuImag.dir/src/MuRunAction.cc.o
 
 
-CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o: CMakeFiles/MuImag.dir/flags.make
-CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o: ../src/MuSteppingAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o -c /home/zhiyu/proj/MuImag/src/MuSteppingAction.cc
+CMakeFiles/MuImag.dir/src/MuonEvent.cc.o: CMakeFiles/MuImag.dir/flags.make
+CMakeFiles/MuImag.dir/src/MuonEvent.cc.o: ../src/MuonEvent.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/MuImag.dir/src/MuonEvent.cc.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/MuonEvent.cc.o -c /home/zhiyu/proj/MuImag/src/MuonEvent.cc
 
-CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/MuSteppingAction.cc > CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.i
+CMakeFiles/MuImag.dir/src/MuonEvent.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MuImag.dir/src/MuonEvent.cc.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/MuonEvent.cc > CMakeFiles/MuImag.dir/src/MuonEvent.cc.i
 
-CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/MuSteppingAction.cc -o CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.s
+CMakeFiles/MuImag.dir/src/MuonEvent.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MuImag.dir/src/MuonEvent.cc.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/MuonEvent.cc -o CMakeFiles/MuImag.dir/src/MuonEvent.cc.s
 
-CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o.requires:
+CMakeFiles/MuImag.dir/src/MuonEvent.cc.o.requires:
 
-.PHONY : CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o.requires
+.PHONY : CMakeFiles/MuImag.dir/src/MuonEvent.cc.o.requires
 
-CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o.provides: CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o.requires
-	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o.provides.build
-.PHONY : CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o.provides
+CMakeFiles/MuImag.dir/src/MuonEvent.cc.o.provides: CMakeFiles/MuImag.dir/src/MuonEvent.cc.o.requires
+	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/MuonEvent.cc.o.provides.build
+.PHONY : CMakeFiles/MuImag.dir/src/MuonEvent.cc.o.provides
 
-CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o.provides.build: CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o
-
-
-CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o: CMakeFiles/MuImag.dir/flags.make
-CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o: ../src/PrimaryHits.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o -c /home/zhiyu/proj/MuImag/src/PrimaryHits.cc
-
-CMakeFiles/MuImag.dir/src/PrimaryHits.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MuImag.dir/src/PrimaryHits.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhiyu/proj/MuImag/src/PrimaryHits.cc > CMakeFiles/MuImag.dir/src/PrimaryHits.cc.i
-
-CMakeFiles/MuImag.dir/src/PrimaryHits.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MuImag.dir/src/PrimaryHits.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhiyu/proj/MuImag/src/PrimaryHits.cc -o CMakeFiles/MuImag.dir/src/PrimaryHits.cc.s
-
-CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o.requires:
-
-.PHONY : CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o.requires
-
-CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o.provides: CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o.requires
-	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o.provides.build
-.PHONY : CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o.provides
-
-CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o.provides.build: CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o
+CMakeFiles/MuImag.dir/src/MuonEvent.cc.o.provides.build: CMakeFiles/MuImag.dir/src/MuonEvent.cc.o
 
 
 # Object files for target MuImag
 MuImag_OBJECTS = \
 "CMakeFiles/MuImag.dir/MuImag.cc.o" \
+"CMakeFiles/MuImag.dir/src/Cluster.cc.o" \
+"CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o" \
 "CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o" \
 "CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o" \
 "CMakeFiles/MuImag.dir/src/MuEventAction.cc.o" \
 "CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o" \
 "CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o" \
 "CMakeFiles/MuImag.dir/src/MuRunAction.cc.o" \
-"CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o" \
-"CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o"
+"CMakeFiles/MuImag.dir/src/MuonEvent.cc.o"
 
 # External object files for target MuImag
 MuImag_EXTERNAL_OBJECTS =
 
 MuImag: CMakeFiles/MuImag.dir/MuImag.cc.o
+MuImag: CMakeFiles/MuImag.dir/src/Cluster.cc.o
+MuImag: CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuEventAction.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o
 MuImag: CMakeFiles/MuImag.dir/src/MuRunAction.cc.o
-MuImag: CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o
-MuImag: CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o
+MuImag: CMakeFiles/MuImag.dir/src/MuonEvent.cc.o
 MuImag: CMakeFiles/MuImag.dir/build.make
 MuImag: /my_cache/Geant4.10.04/install/lib/libG4Tree.so
 MuImag: /my_cache/Geant4.10.04/install/lib/libG4GMocren.so
@@ -311,24 +337,23 @@ MuImag: /my_cache/Geant4.10.04/install/lib/libG4error_propagation.so
 MuImag: /my_cache/Geant4.10.04/install/lib/libG4readout.so
 MuImag: /my_cache/Geant4.10.04/install/lib/libG4physicslists.so
 MuImag: /my_cache/Geant4.10.04/install/lib/libG4parmodels.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libCore.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libImt.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libRIO.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libNet.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libHist.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libGraf.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libGraf3d.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libGpad.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libTree.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libTreePlayer.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libRint.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libPostscript.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libMatrix.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libPhysics.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libMathCore.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libThread.so
-MuImag: /my_cache/ROOT6.10.08/install/lib/libMultiProc.so
-MuImag: ../lib/libPrimaryHits.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libCore.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libImt.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libRIO.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libNet.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libHist.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libGraf.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libGraf3d.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libGpad.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libTree.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libTreePlayer.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libRint.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libPostscript.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libMatrix.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libPhysics.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libMathCore.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libThread.so
+MuImag: /my_cache/ROOT6.12.06/build/lib/libMultiProc.so
 MuImag: /my_cache/Geant4.10.04/install/lib/libG4FR.so
 MuImag: /my_cache/Geant4.10.04/install/lib/libG4vis_management.so
 MuImag: /my_cache/Geant4.10.04/install/lib/libG4modeling.so
@@ -355,7 +380,7 @@ MuImag: /my_cache/Geant4.10.04/install/lib/libG4intercoms.so
 MuImag: /my_cache/Geant4.10.04/install/lib/libG4global.so
 MuImag: /my_cache/Geant4.10.04/install/lib/libG4clhep.so
 MuImag: CMakeFiles/MuImag.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable MuImag"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zhiyu/proj/MuImag/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable MuImag"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MuImag.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -364,14 +389,15 @@ CMakeFiles/MuImag.dir/build: MuImag
 .PHONY : CMakeFiles/MuImag.dir/build
 
 CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/MuImag.cc.o.requires
+CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/Cluster.cc.o.requires
+CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o.requires
 CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/MuActionInitialization.cc.o.requires
 CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/MuDetectorConstruction.cc.o.requires
 CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/MuEventAction.cc.o.requires
 CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/MuPhysicsList.cc.o.requires
 CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/MuPrimaryGeneratorAction.cc.o.requires
 CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/MuRunAction.cc.o.requires
-CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o.requires
-CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o.requires
+CMakeFiles/MuImag.dir/requires: CMakeFiles/MuImag.dir/src/MuonEvent.cc.o.requires
 
 .PHONY : CMakeFiles/MuImag.dir/requires
 

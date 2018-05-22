@@ -49,7 +49,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/MuImag")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/MuImag"
-         OLD_RPATH "/my_cache/Geant4.10.04/install/lib:/my_cache/ROOT6.10.08/install/lib:/home/zhiyu/proj/MuImag/lib:"
+         OLD_RPATH "/my_cache/ROOT6.12.06/build/lib:/home/zhiyu/proj/MuImag/lib:/home/zhiyu/software/garfield/Library:/my_cache/Geant4.10.04/install/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/MuImag")

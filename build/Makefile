@@ -70,8 +70,8 @@ install/strip/fast: preinstall/fast
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -195,6 +195,60 @@ MuImag.s: MuImag.cc.s
 MuImag.cc.s:
 	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/MuImag.cc.s
 .PHONY : MuImag.cc.s
+
+src/Cluster.o: src/Cluster.cc.o
+
+.PHONY : src/Cluster.o
+
+# target to build an object file
+src/Cluster.cc.o:
+	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/Cluster.cc.o
+.PHONY : src/Cluster.cc.o
+
+src/Cluster.i: src/Cluster.cc.i
+
+.PHONY : src/Cluster.i
+
+# target to preprocess a source file
+src/Cluster.cc.i:
+	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/Cluster.cc.i
+.PHONY : src/Cluster.cc.i
+
+src/Cluster.s: src/Cluster.cc.s
+
+.PHONY : src/Cluster.s
+
+# target to generate assembly for a file
+src/Cluster.cc.s:
+	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/Cluster.cc.s
+.PHONY : src/Cluster.cc.s
+
+src/GarfieldG4FastSimulationModel.o: src/GarfieldG4FastSimulationModel.cc.o
+
+.PHONY : src/GarfieldG4FastSimulationModel.o
+
+# target to build an object file
+src/GarfieldG4FastSimulationModel.cc.o:
+	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.o
+.PHONY : src/GarfieldG4FastSimulationModel.cc.o
+
+src/GarfieldG4FastSimulationModel.i: src/GarfieldG4FastSimulationModel.cc.i
+
+.PHONY : src/GarfieldG4FastSimulationModel.i
+
+# target to preprocess a source file
+src/GarfieldG4FastSimulationModel.cc.i:
+	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.i
+.PHONY : src/GarfieldG4FastSimulationModel.cc.i
+
+src/GarfieldG4FastSimulationModel.s: src/GarfieldG4FastSimulationModel.cc.s
+
+.PHONY : src/GarfieldG4FastSimulationModel.s
+
+# target to generate assembly for a file
+src/GarfieldG4FastSimulationModel.cc.s:
+	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/GarfieldG4FastSimulationModel.cc.s
+.PHONY : src/GarfieldG4FastSimulationModel.cc.s
 
 src/MuActionInitialization.o: src/MuActionInitialization.cc.o
 
@@ -358,59 +412,32 @@ src/MuRunAction.cc.s:
 	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/MuRunAction.cc.s
 .PHONY : src/MuRunAction.cc.s
 
-src/MuSteppingAction.o: src/MuSteppingAction.cc.o
+src/MuonEvent.o: src/MuonEvent.cc.o
 
-.PHONY : src/MuSteppingAction.o
-
-# target to build an object file
-src/MuSteppingAction.cc.o:
-	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.o
-.PHONY : src/MuSteppingAction.cc.o
-
-src/MuSteppingAction.i: src/MuSteppingAction.cc.i
-
-.PHONY : src/MuSteppingAction.i
-
-# target to preprocess a source file
-src/MuSteppingAction.cc.i:
-	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.i
-.PHONY : src/MuSteppingAction.cc.i
-
-src/MuSteppingAction.s: src/MuSteppingAction.cc.s
-
-.PHONY : src/MuSteppingAction.s
-
-# target to generate assembly for a file
-src/MuSteppingAction.cc.s:
-	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/MuSteppingAction.cc.s
-.PHONY : src/MuSteppingAction.cc.s
-
-src/PrimaryHits.o: src/PrimaryHits.cc.o
-
-.PHONY : src/PrimaryHits.o
+.PHONY : src/MuonEvent.o
 
 # target to build an object file
-src/PrimaryHits.cc.o:
-	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/PrimaryHits.cc.o
-.PHONY : src/PrimaryHits.cc.o
+src/MuonEvent.cc.o:
+	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/MuonEvent.cc.o
+.PHONY : src/MuonEvent.cc.o
 
-src/PrimaryHits.i: src/PrimaryHits.cc.i
+src/MuonEvent.i: src/MuonEvent.cc.i
 
-.PHONY : src/PrimaryHits.i
+.PHONY : src/MuonEvent.i
 
 # target to preprocess a source file
-src/PrimaryHits.cc.i:
-	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/PrimaryHits.cc.i
-.PHONY : src/PrimaryHits.cc.i
+src/MuonEvent.cc.i:
+	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/MuonEvent.cc.i
+.PHONY : src/MuonEvent.cc.i
 
-src/PrimaryHits.s: src/PrimaryHits.cc.s
+src/MuonEvent.s: src/MuonEvent.cc.s
 
-.PHONY : src/PrimaryHits.s
+.PHONY : src/MuonEvent.s
 
 # target to generate assembly for a file
-src/PrimaryHits.cc.s:
-	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/PrimaryHits.cc.s
-.PHONY : src/PrimaryHits.cc.s
+src/MuonEvent.cc.s:
+	$(MAKE) -f CMakeFiles/MuImag.dir/build.make CMakeFiles/MuImag.dir/src/MuonEvent.cc.s
+.PHONY : src/MuonEvent.cc.s
 
 # Help Target
 help:
@@ -428,6 +455,12 @@ help:
 	@echo "... MuImag.o"
 	@echo "... MuImag.i"
 	@echo "... MuImag.s"
+	@echo "... src/Cluster.o"
+	@echo "... src/Cluster.i"
+	@echo "... src/Cluster.s"
+	@echo "... src/GarfieldG4FastSimulationModel.o"
+	@echo "... src/GarfieldG4FastSimulationModel.i"
+	@echo "... src/GarfieldG4FastSimulationModel.s"
 	@echo "... src/MuActionInitialization.o"
 	@echo "... src/MuActionInitialization.i"
 	@echo "... src/MuActionInitialization.s"
@@ -446,12 +479,9 @@ help:
 	@echo "... src/MuRunAction.o"
 	@echo "... src/MuRunAction.i"
 	@echo "... src/MuRunAction.s"
-	@echo "... src/MuSteppingAction.o"
-	@echo "... src/MuSteppingAction.i"
-	@echo "... src/MuSteppingAction.s"
-	@echo "... src/PrimaryHits.o"
-	@echo "... src/PrimaryHits.i"
-	@echo "... src/PrimaryHits.s"
+	@echo "... src/MuonEvent.o"
+	@echo "... src/MuonEvent.i"
+	@echo "... src/MuonEvent.s"
 .PHONY : help
 
 
